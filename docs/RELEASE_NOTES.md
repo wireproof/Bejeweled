@@ -1,3 +1,11 @@
+# 0.0.24 — 2026-10-26
+
+- Restore Blitz menu activation independently of its cosmetic fade opacity. Keep the native fade and splash visibility checks.
+- Lower the small gameplay controls eight native units, moving artwork and touch areas together without accumulating movement between frames.
+- Preserve the corrected button rendering, portrait layout, top-left multiplier, and raised boost selector footer.
+
+Physical tap behavior and final spacing require device confirmation.
+
 # 0.0.23 — 2026-10-26
 
 - Scale each lower native control as a complete drawing, fixing the cross-shaped gaps introduced by per-piece scaling in 0.0.22. Keep the smaller artwork and matching touch layout.

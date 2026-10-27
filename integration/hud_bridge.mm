@@ -12,6 +12,8 @@ constexpr std::uintptr_t tableVA=0x1029fc370;
 constexpr std::size_t tableBytes=0x2d8, addressPoint=0x10, drawSlot=0xd8;
 std::array<std::uintptr_t,tableBytes/sizeof(std::uintptr_t)> table{};
 bool initialized=false,compatible=false;
+struct Position { void* button=nullptr; int appliedY=0; };
+std::array<Position,3> positions{};
 template<class T>T read(const void*p,std::size_t o){T v;std::memcpy(&v,static_cast<const char*>(p)+o,sizeof v);return v;}
 template<class T>void write(void*p,std::size_t o,T v){std::memcpy(static_cast<char*>(p)+o,&v,sizeof v);}
 template<class F>F fn(std::uintptr_t va){return reinterpret_cast<F>(imageSlide+va);}
@@ -72,8 +74,15 @@ extern "C" void BJHUDObserve(void*board,std::uintptr_t slide){
   void*button=read<void*>(board,offsets[i]);if(!button)continue;
   auto vptr=read<std::uintptr_t>(button,0);
   if(vptr!=slide+tableVA+addressPoint&&vptr!=custom)continue;
-  const int x=boardW-inset-w-(2-i)*(w+gap),y=read<int>(button,0x54);
-  // Native Resize updates geometry and hit testing, retaining the profile's Y.
+  const int x=boardW-inset-w-(2-i)*(w+gap);
+  const int currentY=read<int>(button,0x54);
+  auto &position=positions[i];
+  // Apply the small inset once, and reapply only after native layout changes.
+  // The vtable check also distinguishes a newly allocated widget at a reused address.
+  const bool alreadyPlaced=vptr==custom && position.button==button && currentY==position.appliedY;
+  const int y=alreadyPlaced?currentY:currentY+8;
+  position={button,y};
+  // Native Resize moves artwork and hit testing together.
   fn<void(*)(void*,int,int,int,int)>(0x100ed0ac8)(button,x,y,w,h);
   write(button,0,custom);
  }

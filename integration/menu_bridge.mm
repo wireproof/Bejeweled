@@ -89,7 +89,7 @@ void diagnoseMenu(void *a) {
   lastTime=now;
   void *menu=read<void*>(a,0xb78);
   bool valid=menu && read<uintptr_t>(menu,0)==slide+0x1029d8f50;
-  NSString *line=[NSString stringWithFormat:@"0.0.23 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
+  NSString *line=[NSString stringWithFormat:@"0.0.24 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
     read<int>(a,0xaa4),read<uint8_t>(a,0xaa0),valid,
     valid?read<uint8_t>(menu,0x74):-1,valid?read<int>(menu,0x54):-1,
     valid?read<int>(menu,0x120):-1,native<int(*)(void*)>(0x100d0b82c)(a)];
@@ -233,7 +233,9 @@ void publishUI(id delegate,bool visible,float opacity,int width,int height,int c
     }
     blitzButton.alpha=opacity;
     blitzButton.hidden=!visible || opacity<=0.0f || !ready.load();
-    blitzButton.enabled=visible && opacity>=0.99f && ready.load() && !pending.load();
+    // Native orb opacity is cosmetic and can remain below full opacity.
+    // Menu eligibility and pending state govern activation; UIKit ignores hidden/transparent views.
+    blitzButton.enabled=visible && ready.load() && !pending.load();
   };
   if(NSThread.isMainThread)block(); else dispatch_async(dispatch_get_main_queue(),block);
 }
@@ -269,6 +271,6 @@ __attribute__((constructor)) void loadBridge() {
   (void)presentationInstalled;
   // Let Objective-C class registration and UIKit startup finish. No UIKit
   // polling timer and no runtime executable-page writes are used.
-  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.23 (7855) bridge load callback"); install();});
+  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.24 (7855) bridge load callback"); install();});
 }
 }
