@@ -61,7 +61,13 @@ bool menuAvailable(void *a) {
   // MainMenu exists during the publisher-logo sequence. Its native queue
   // must be empty before a menu control may draw above the game surface.
   if (read<uintptr_t>(menu,0x6a0)!=read<uintptr_t>(menu,0x6a8)) return false;
-  if (read<int>(menu,0x54)!=read<int>(menu,0x120)) return false;
+  if (read<int>(menu,0x54)!=read<int>(menu,0x120) || read<uint8_t>(menu,0x76)) return false;
+  // MainMenuOptions remains in interface state 1 while its drawer expands.
+  // Both current and target positions must be back at MENU_Y_POS_HIDDEN.
+  void *options=read<void*>(a,0xae0);
+  const int hiddenY=read<int>(reinterpret_cast<void*>(slide+0x102fab3fc),0);
+  if(options && read<uint8_t>(options,0x74) &&
+     (read<int>(options,0x54)<hiddenY || read<int>(options,0x120)<hiddenY))return false;
   return native<int(*)(void*)>(0x100d0b82c)(a)==0;
 }
 float menuOpacity(void *a) {
@@ -92,7 +98,7 @@ void diagnoseMenu(void *a) {
   lastTime=now;
   void *menu=read<void*>(a,0xb78);
   bool valid=menu && read<uintptr_t>(menu,0)==slide+0x1029d8f50;
-  NSString *line=[NSString stringWithFormat:@"0.0.30 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
+  NSString *line=[NSString stringWithFormat:@"0.0.31 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
     read<int>(a,0xaa4),read<uint8_t>(a,0xaa0),valid,
     valid?read<uint8_t>(menu,0x74):-1,valid?read<int>(menu,0x54):-1,
     valid?read<int>(menu,0x120):-1,native<int(*)(void*)>(0x100d0b82c)(a)];
@@ -283,6 +289,6 @@ __attribute__((constructor)) void loadBridge() {
   (void)presentationInstalled;
   // Let Objective-C class registration and UIKit startup finish. No UIKit
   // polling timer and no runtime executable-page writes are used.
-  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.30 (7865) bridge load callback"); install();});
+  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.31 (7866) bridge load callback"); install();});
 }
 }

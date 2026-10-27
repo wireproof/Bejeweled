@@ -1,3 +1,13 @@
+## 0.0.31 — 2026-10-26
+
+- Hide the Blitz orb while the main-menu drawer opens or remains expanded, including transitions; it no longer sits over the close control.
+- Hide Classic daily-use counters and touch interception while native pause/options/Zen menus are shown. Retain saved quotas and gameplay counts.
+- Restore the native localized Zen Options text button instead of its compact gear variant, preserving the original callback.
+- Lay out Blitz results using the full window bounds, matching the boost picker margins and refreshing geometry after window changes. Avoid stale asymmetric safe-area insets that shrink and offset the panel.
+- Display selected Scrambler and Multiplier levels on their boost cards. Base artwork remains unchanged; this does not add more boost types.
+
+Validation: four host test suites, 29 guarded native patches, packaging, and iOS compilation passed. Install on Duo without launch; physical menu transitions and results geometry require owner verification.
+
 ## 0.0.30 — 2026-10-26
 
 - Classic Mystery and Shuffle each have an independent rolling limit of 10 uses per real-time 24 hours. Usage persists across relaunch, guards against backward clock changes, and displays time until the next use returns. Hints remain unlimited. Busy or ineligible actions do not spend a charge.

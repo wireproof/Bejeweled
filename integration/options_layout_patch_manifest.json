@@ -56,6 +56,13 @@
       "original": "08b12091020140b9",
       "replacement": "022d48b942640011",
       "reason": "Center shared options section: Help checkbox Y +25 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100098490",
+      "file_offset": 623760,
+      "original": "687801f0",
+      "replacement": "29000014",
+      "reason": "Zen InitUI: use original localized Zen Options text button path on every display rather than the compact gear custom-image branch. Existing button id 5 and native callback are preserved."
     }
   ]
 }

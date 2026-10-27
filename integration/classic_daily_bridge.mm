@@ -107,7 +107,13 @@ extern "C" void BJClassicDailyObserve(void*board,std::uintptr_t slide){
    auto isPaused=reinterpret_cast<bool(*)(void*)>(slide+0x10015b034);
    auto suspended=reinterpret_cast<bool(*)(void*)>(slide+0x10015ae8c);
    auto canInteract=reinterpret_cast<bool(*)(void*)>(read<std::uintptr_t>((void*)vt,0x7c8));
-   next.show=!isPaused(board)&&!read<unsigned char>(board,0x36e0);
+   next.show=!isPaused(board)&&!suspended(board)&&!read<unsigned char>(board,0x76)&&!read<unsigned char>(board,0x36e0);
+   // Pause/options drawers do not always set Board::IsGamePaused.
+   void*app=read<void*>((void*)(slide+0x102fa7090),0);
+   if(app){const int hiddenY=read<int>((void*)(slide+0x102fab3fc),0);
+    for(std::size_t offset:{0xaf0,0xb00,0xb60}){void*menu=read<void*>(app,offset);
+     if(menu&&read<unsigned char>(menu,0x74)&&(read<int>(menu,0x54)<hiddenY||read<int>(menu,0x120)<hiddenY))next.show=false;}
+   }
    next.enabled=next.show&&!suspended(board)&&!read<unsigned char>(board,0x36e0)&&canInteract(board);
    load();const auto now=static_cast<std::int64_t>(NSDate.date.timeIntervalSince1970);
    // Index 0 is Mystery/supertool; index 1 is Shuffle/tool.
