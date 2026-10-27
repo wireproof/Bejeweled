@@ -32,7 +32,7 @@ clang++ -std=c++17 -Wall -Wextra -Werror -pedantic blitz-core/test_boost_core.cp
 
 ## Status
 
-Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.21 refines options alignment, lower controls, and multiplier placement; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
+Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.22 further refines lower-control sizing and launch fit; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
 
 ## Source map
 
@@ -40,6 +40,7 @@ Version 0.0.20 was tested by the owner on Duo and described as the best version 
 | --- | --- |
 | `integration/menu_bridge.mm` | Original menu integration and native frame callbacks |
 | `integration/round_bridge.mm` | Timed-round rules and native board hooks |
+| `integration/hud_bridge.mm` | Lower-control artwork scaling and native touch geometry |
 | `integration/boost_bridge.mm` | Boost execution and in-game controls |
 | `integration/loadout_bridge.mm` | Boost picker and local selection/high-score persistence |
 | `integration/presentation_bridge.mm` | Rendering geometry and lifecycle handling |

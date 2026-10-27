@@ -11,6 +11,8 @@
 #include <mutex>
 #include <vector>
 
+extern "C" void BJHUDObserve(void*,std::uintptr_t);
+
 namespace {
 using namespace bejeweled_private;
 using blitz::Boost; using blitz::Event;
@@ -212,6 +214,9 @@ extern "C" void BJBoostBegin(std::uintptr_t slide,std::uint64_t generation) {
 }
 extern "C" void BJBoostUpdate(void* board,std::uint64_t generation,bool active,std::int64_t elapsedTicks) {
  if(!board||!entrypointsValid||generation!=currentGeneration)return;
+ // Native Update may refresh button positions; reapply immediately before
+ // publishing their live geometry to the UIKit controls.
+ BJHUDObserve(board,imageSlide);
  captureControls(board);
  if(active!=lastActive){lastActive=active;dispatch_async(dispatch_get_main_queue(),^{if(visibleGeneration.load()==generation)overlay.hidden=!active;});}
  if(!active){std::lock_guard<std::mutex> lock(queueMutex);queue.clear();return;}

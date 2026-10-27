@@ -1,3 +1,11 @@
+# 0.0.22 — 2026-10-26
+
+- Remove the loading/gameplay inset so the splash, menu, and board use the same full-window bounds.
+- Reduce lower gameplay control artwork and matching touch geometry, and keep the row clear of the central menu button.
+- Keep the accepted top-left multiplier and centered Auto-Hint/Help section.
+
+The owner confirmed that 0.0.21 reached full screen after loading and the multiplier placement worked. The remaining button overlap shown on cover and inner displays motivates this update. Physical appearance and touch behavior of 0.0.22 still require device confirmation.
+
 # 0.0.21 — 2026-10-26
 
 First public mod-source release. The original game package and assets remain private inputs.

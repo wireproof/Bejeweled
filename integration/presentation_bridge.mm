@@ -13,7 +13,6 @@ std::atomic<unsigned> foregroundEpoch{0};
 __weak UIView *lastGameView;
 id foregroundObserver;
 thread_local bool fitting=false;
-bool menuVisible=true;
 void note(UIView *view) {
  static NSString *previous; static unsigned count;
  UIWindow *window=view.window;
@@ -24,7 +23,7 @@ void note(UIView *view) {
  NSString *path=[dir stringByAppendingPathComponent:@"Bejeweled-Presentation.log"];
  if(![NSFileManager.defaultManager fileExistsAtPath:path])[NSFileManager.defaultManager createFileAtPath:path contents:nil attributes:nil];
  NSFileHandle *f=[NSFileHandle fileHandleForWritingAtPath:path];
- @try{[f seekToEndOfFile];[f writeData:[[NSString stringWithFormat:@"0.0.21 %.3f %@\n",NSDate.date.timeIntervalSince1970,geometry] dataUsingEncoding:NSUTF8StringEncoding]];[f closeFile];}@catch(NSException *e){(void)e;}
+ @try{[f seekToEndOfFile];[f writeData:[[NSString stringWithFormat:@"0.0.22 %.3f %@\n",NSDate.date.timeIntervalSince1970,geometry] dataUsingEncoding:NSUTF8StringEncoding]];[f closeFile];}@catch(NSException *e){(void)e;}
 }
 void fit(UIView *view) {
  if(fitting||!NSThread.isMainThread)return;
@@ -44,7 +43,9 @@ void fit(UIView *view) {
   if(sceneBounds.size.width>=64 && sceneBounds.size.height>=64 && !CGRectEqualToRect(window.frame,sceneBounds))window.frame=sceneBounds;
   // Fit the artwork to the whole display. Legacy safe-area values can retain
   // a rotated cutout; applying them shrinks the complete game unnecessarily.
-  CGRect available=menuVisible?window.bounds:CGRectInset(window.bounds,4,4);
+  // Keep launch, menu and gameplay on the same full-window transform.
+  // Individual controls provide their own edge clearance.
+  CGRect available=window.bounds;
   if(available.size.width>=64&&available.size.height>=64){
    CGFloat sx=available.size.width/320,sy=available.size.height/logicalHeight;
    CGFloat ratio=sx/sy;
@@ -94,7 +95,7 @@ void layoutHook(UIView *view,SEL sel){fit(view);reinterpret_cast<void(*)(id,SEL)
 bool exact(Method m,uintptr_t offset){if(!m)return false;uintptr_t imp=(uintptr_t)method_getImplementation(m);
  for(uint32_t i=0;i<_dyld_image_count();++i)if(imp==(uintptr_t)_dyld_get_image_vmaddr_slide(i)+offset)return true;return false;}
 }
-extern "C" void BJPresentationSetMenuVisible(bool visible){menuVisible=visible;}
+extern "C" void BJPresentationSetMenuVisible(bool visible){(void)visible;}
 extern "C" void BJPresentationRefresh(void *p){fit((__bridge UIView*)p);}
 extern "C" bool BJPresentationInstall(){
  if(originalLayout&&originalResize)return true;
