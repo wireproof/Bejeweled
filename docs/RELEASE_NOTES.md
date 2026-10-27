@@ -1,3 +1,13 @@
+# 0.0.27 — 2026-10-26
+
+- Make Mystery and Extra Time tap-to-use, one use each per round, as requested.
+- Mystery immediately requests one random special gem, deferring until a settled gem is available if the board is cascading.
+- Extra Time adds five seconds when tapped; it no longer activates at round start.
+- Show remaining uses, disable/dim spent controls, and update the boost selection descriptions. Multiplier remains automatic; Detonator and Scrambler retain two uses.
+- Extend all-loadout tests to reject paused/unequipped clicks, prevent repeated use, verify no automatic consumption, and restore uses on round reset.
+
+Install on Duo only; do not launch automatically. Physical activation still needs device confirmation.
+
 # 0.0.26 — 2026-10-26
 
 - Show every equipped boost during Blitz, with AUTO/+5s indicators for passive boosts and remaining-use counts for Detonator and Scrambler.

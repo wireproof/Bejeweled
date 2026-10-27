@@ -23,7 +23,7 @@ void note(UIView *view) {
  NSString *path=[dir stringByAppendingPathComponent:@"Bejeweled-Presentation.log"];
  if(![NSFileManager.defaultManager fileExistsAtPath:path])[NSFileManager.defaultManager createFileAtPath:path contents:nil attributes:nil];
  NSFileHandle *f=[NSFileHandle fileHandleForWritingAtPath:path];
- @try{[f seekToEndOfFile];[f writeData:[[NSString stringWithFormat:@"0.0.26 %.3f %@\n",NSDate.date.timeIntervalSince1970,geometry] dataUsingEncoding:NSUTF8StringEncoding]];[f closeFile];}@catch(NSException *e){(void)e;}
+ @try{[f seekToEndOfFile];[f writeData:[[NSString stringWithFormat:@"0.0.27 %.3f %@\n",NSDate.date.timeIntervalSince1970,geometry] dataUsingEncoding:NSUTF8StringEncoding]];[f closeFile];}@catch(NSException *e){(void)e;}
 }
 void fit(UIView *view) {
  if(fitting||!NSThread.isMainThread)return;

@@ -22,7 +22,7 @@ extern "C" void BJLoadoutRecordScore(int score){if(score<0)return;std::lock_guar
 extern "C" void BJLoadoutFlush(){std::lock_guard<std::mutex>l(storageMutex);if(loaded)save();}
 static NSArray* BJNames(){return @[@"Mystery",@"Detonator",@"Scrambler",@"Extra Time",@"Multiplier"];}
 static NSArray* BJFiles(){return @[@"mystery_2x.png",@"detonator_2x.png",@"scrambler_2x.png",@"extratime_2x.png",@"multiplier_2x.png"];}
-static NSArray* BJHelp(){return @[@"Automatic: creates surprise special gems as you match.",@"Detonate special gems. Two uses per round.",@"Reshuffle the board. Two uses per round.",@"Automatic: adds five seconds. Starts at 1:05.",@"Automatic: adds a multiplier gem at the start and every 30 seconds. Match it to raise x1."];}
+static NSArray* BJHelp(){return @[@"Tap during play to create a surprise special gem. One use per round.",@"Detonate special gems. Two uses per round.",@"Reshuffle the board. Two uses per round.",@"Tap during play to add five seconds. One use per round.",@"Automatic: adds a multiplier gem at the start and every 30 seconds. Match it to raise x1."];}
 static UILabel* BJLabel(NSString*text,CGFloat size){UILabel*l=[UILabel new];l.text=text;l.textColor=UIColor.whiteColor;l.textAlignment=NSTextAlignmentCenter;l.font=[UIFont boldSystemFontOfSize:size];l.shadowColor=[UIColor colorWithWhite:0 alpha:0.8];l.shadowOffset=CGSizeMake(0,1);l.adjustsFontSizeToFitWidth=YES;l.minimumScaleFactor=0.8;return l;}
 @interface BJLoadoutPanel:UIView
 @property(nonatomic,copy)void(^completion)(void);

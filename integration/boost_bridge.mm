@@ -6,6 +6,7 @@
 #include "../blitz-core/boost_runtime.hpp"
 #include "../evidence/blitz-bridge-plan/native_primitives.hpp"
 #include <algorithm>
+#include <array>
 #include <atomic>
 #include <cstring>
 #include <mutex>
@@ -26,7 +27,7 @@ bool entrypointsValid=false;
 blitz::BoostRuntime runtime;
 bool lastActive=false;
 uint32_t loadoutMask=7;
-int lastShownDetonator=-1,lastShownScrambler=-1;
+std::array<int,5> lastShownUses{{-1,-1,-1,-1,-1}};
 std::vector<blitz::GemSet> deferredConversions;
 
 UIView* overlay=nil;
@@ -49,7 +50,6 @@ void captureControls(void* board) {
  std::lock_guard<std::mutex> lock(geometryMutex);
  toolRect=rects[0];superRect=rects[1];haveGeometry=true;
 }
-UIButton *detonateButton=nil,*scrambleButton=nil;
 
 template<class T> T field(const void* p,std::size_t offset) {
  T value{};std::memcpy(&value,static_cast<const char*>(p)+offset,sizeof(value));return value;
@@ -114,17 +114,17 @@ public:
  }
 };
 void refreshButtons(std::uint64_t generation) {
- const int d=runtime.remaining(Boost::Detonator),s=runtime.remaining(Boost::Scrambler);
- if(d==lastShownDetonator&&s==lastShownScrambler)return;
- lastShownDetonator=d;lastShownScrambler=s;
+ std::array<int,5> uses{};for(unsigned i=0;i<5;++i)uses[i]=runtime.remaining(static_cast<Boost>(i));
+ if(uses==lastShownUses)return;lastShownUses=uses;
  dispatch_async(dispatch_get_main_queue(),^{
   if(visibleGeneration.load()!=generation)return;
-  ((UILabel*)[detonateButton viewWithTag:100]).text=[NSString stringWithFormat:@"%d",d];
-  ((UILabel*)[scrambleButton viewWithTag:100]).text=[NSString stringWithFormat:@"%d",s];
-  detonateButton.accessibilityValue=[NSString stringWithFormat:@"%d uses remaining",d];
-  scrambleButton.accessibilityValue=[NSString stringWithFormat:@"%d uses remaining",s];
-  detonateButton.alpha=d>0?1.0:0.4;scrambleButton.alpha=s>0?1.0:0.4;
-  detonateButton.enabled=d>0;scrambleButton.enabled=s>0;
+  for(UIButton* button in equippedControls){
+   const NSInteger i=button.tag;if(i<0||i>=4)continue;
+   const int count=uses[i];
+   ((UILabel*)[button viewWithTag:100]).text=[NSString stringWithFormat:@"%d",count];
+   button.accessibilityValue=[NSString stringWithFormat:@"%d uses remaining",count];
+   button.alpha=count>0?1.0:0.4;button.enabled=count>0;
+  }
  });
 }
 }
@@ -147,7 +147,8 @@ void refreshButtons(std::uint64_t generation) {
 + (void)pressed:(UIButton*)sender {
  auto generation=visibleGeneration.load();if(!generation)return;
  std::lock_guard<std::mutex> lock(queueMutex);
- if(queue.size()<8)queue.push_back({generation,sender.tag==1?Boost::Detonator:Boost::Scrambler});
+ if(sender.tag>=0 && sender.tag<4 && queue.size()<8)
+  queue.push_back({generation,static_cast<Boost>(sender.tag)});
 }
 @end
 
@@ -175,22 +176,21 @@ void displayOverlay(std::uint64_t generation) {
   overlay=[[BJBoostOverlay alloc]initWithFrame:window.bounds];overlay.hidden=YES;
   overlay.backgroundColor=UIColor.clearColor;
   overlay.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-  detonateButton=nil;scrambleButton=nil;
   NSArray<NSString*>* names=@[@"Mystery",@"Detonator",@"Scrambler",@"Extra Time",@"Multiplier"];
   NSArray<NSString*>* files=@[@"mystery_2x.png",@"detonator_2x.png",@"scrambler_2x.png",@"extratime_2x.png",@"multiplier_2x.png"];
   NSMutableArray<UIButton*>* controls=[NSMutableArray new];
   for(NSUInteger i=0;i<5;++i){
    if(!(selectedMask&(1u<<i)))continue;
    UIButton* b=[UIButton buttonWithType:UIButtonTypeCustom];b.tag=i;
-   const bool manual=i==1||i==2;
-   if(i==1)detonateButton=b;if(i==2)scrambleButton=b;
+   const bool manual=i<4;
+   const int initialUses=(i==1||i==2)?2:1;
    b.userInteractionEnabled=manual;
-   b.accessibilityLabel=names[i];b.accessibilityValue=manual?@"2 uses remaining":@"Automatic boost equipped";
+   b.accessibilityLabel=names[i];b.accessibilityValue=manual?[NSString stringWithFormat:@"%d uses remaining",initialUses]:@"Automatic boost equipped";
    UIImageView* icon=[[UIImageView alloc]initWithImage:BJUIAsset(files[i])];
    icon.contentMode=UIViewContentModeScaleAspectFit;icon.frame=b.bounds;
    icon.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
    [b addSubview:icon];
-   UILabel* count=[UILabel new];count.tag=100;count.text=manual?@"2":i==3?@"+5s":@"AUTO";count.textColor=UIColor.whiteColor;
+   UILabel* count=[UILabel new];count.tag=100;count.text=manual?[NSString stringWithFormat:@"%d",initialUses]:@"AUTO";count.textColor=UIColor.whiteColor;
    count.font=[UIFont boldSystemFontOfSize:manual?15:10];count.textAlignment=NSTextAlignmentCenter;
    count.layer.shadowColor=UIColor.blackColor.CGColor;count.layer.shadowOpacity=1;count.layer.shadowRadius=2;
    count.layer.shadowOffset=CGSizeMake(0,1);count.translatesAutoresizingMaskIntoConstraints=NO;
@@ -213,7 +213,7 @@ extern "C" bool BJBoostCompatible(std::uintptr_t slide) {
 extern "C" void BJBoostBegin(std::uintptr_t slide,std::uint64_t generation) {
  loadoutMask=BJLoadoutMask();runtime.reset(loadoutMask);imageSlide=slide;currentGeneration=generation;
  {std::lock_guard<std::mutex> lock(geometryMutex);haveGeometry=false;}
- lastActive=false;lastShownDetonator=lastShownScrambler=-1;
+ lastActive=false;lastShownUses.fill(-1);
  deferredConversions.clear();
  entrypointsValid=BJBoostCompatible(slide);
  {std::lock_guard<std::mutex> lock(queueMutex);queue.clear();}
@@ -244,7 +244,7 @@ extern "C" void BJBoostEnd(std::uint64_t generation) {
  currentGeneration=0;entrypointsValid=false;visibleGeneration.store(0);
  deferredConversions.clear();
  {std::lock_guard<std::mutex> lock(queueMutex);queue.clear();}
- dispatch_async(dispatch_get_main_queue(),^{if(!visibleGeneration.load()){[overlay removeFromSuperview];overlay=nil;detonateButton=nil;scrambleButton=nil;equippedControls=nil;}});
+ dispatch_async(dispatch_get_main_queue(),^{if(!visibleGeneration.load()){[overlay removeFromSuperview];overlay=nil;equippedControls=nil;}});
 }
 
 extern "C" void BJBoostLayout(void* gameView,int width,int height) {

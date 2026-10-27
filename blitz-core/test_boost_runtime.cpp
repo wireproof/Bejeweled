@@ -19,9 +19,15 @@ int main(){
   Board b;BoostRuntime r;r.reset(mask);
   r.update(false,0,b);r.match(b);assert(b.special==0&&b.mult==0&&b.time==0);
   r.update(true,0,b);r.update(true,0,b);
-  assert(b.time==((mask&8)?500:0));assert(b.mult==((mask&16)?1:0));
-  r.match(b);assert(b.special==((mask&1)?1:0));
-  r.update(false,0,b);assert(!r.click(Boost::Scrambler,false,b));
+  assert(b.time==0);assert(b.mult==((mask&16)?1:0));
+  r.match(b);assert(b.special==0);
+  r.update(false,0,b);
+  for(auto boost:{Boost::Mystery,Boost::ExtraTime,Boost::Detonator,Boost::Scrambler})assert(!r.click(boost,false,b));
+  assert(b.time==0&&b.special==0);
+  for(int i=0;i<3;++i){r.click(Boost::Mystery,true,b);r.click(Boost::ExtraTime,true,b);}
+  assert(b.special==((mask&1)?1:0));assert(b.time==((mask&8)?500:0));
+  assert(r.remaining(Boost::Mystery)==((mask&1)?0:1));
+  assert(r.remaining(Boost::ExtraTime)==((mask&8)?0:1));
   for(int tick=1;tick<=2999;++tick)r.update(true,tick,b);
   assert(b.mult==((mask&16)?1:0));r.update(true,3000,b);assert(b.mult==((mask&16)?2:0));
   assert(!r.click(Boost::Detonator,true,b));assert(r.remaining(Boost::Detonator)==2);
@@ -29,5 +35,13 @@ int main(){
   assert(b.detonations==((mask&2)?2:0));assert(b.scrambles==((mask&4)?2:0));
   r.reset(0);r.update(true,0,b);const int before=b.mult;r.update(true,1000,b);r.update(true,2000,b);r.update(true,3000,b);assert(b.mult==before);
  }
- std::cout<<"PASS: all 26 permitted loadouts, passive effects, repeat-start, pause, use limits, reset and 30-second activation\n";
+ {
+  Board b;BoostRuntime r;r.reset(9);r.update(true,0,b);
+  assert(r.click(Boost::Mystery,true,b)&&r.click(Boost::ExtraTime,true,b));
+  r.reset(9);r.update(true,0,b);assert(b.special==1&&b.time==500);
+  assert(r.remaining(Boost::Mystery)==1&&r.remaining(Boost::ExtraTime)==1);
+  assert(r.click(Boost::Mystery,true,b)&&r.click(Boost::ExtraTime,true,b));
+  assert(b.special==2&&b.time==1000);
+ }
+ std::cout<<"PASS: all 26 permitted loadouts, manual boost effects, no auto-use, repeat-start, pause, use limits, reset and 30-second activation\n";
 }
