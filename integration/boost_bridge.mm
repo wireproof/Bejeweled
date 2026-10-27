@@ -259,6 +259,9 @@ extern "C" void BJBoostLayout(void* gameView,int width,int height) {
   auto r=rects[i];if(r.w<=0||r.h<=0)continue;
   CGRect gameRect=CGRectMake(r.x*view.bounds.size.width/width,r.y*view.bounds.size.height/height,
    r.w*view.bounds.size.width/width,r.h*view.bounds.size.height/height);
+  // Enlarge the portrait power-up art and touch area, retaining four units
+  // between adjacent hit targets and the accepted row center.
+  gameRect=CGRectInset(gameRect,-4.0*view.bounds.size.width/width,-7.5*view.bounds.size.height/height);
   CGRect hostRect=[view convertRect:gameRect toView:overlay];
   if(!CGRectEqualToRect(buttons[i].frame,hostRect))buttons[i].frame=hostRect;
  }

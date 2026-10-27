@@ -1,3 +1,12 @@
+# 0.0.25 — 2026-10-26
+
+- Lower Classic and Zen controls another four native units.
+- Increase the right HUD inset to keep the original drawing inside the board before renderer scaling, addressing right-edge clipping.
+- Move the Blitz multiplier twelve native units inward for rounded display corners.
+- Enlarge Blitz power-up artwork and touch areas while keeping adjacent targets separated.
+
+The owner confirmed Blitz activation and appearance in 0.0.24. Final spacing and clipping corrections require physical-device confirmation.
+
 # 0.0.24 — 2026-10-26
 
 - Restore Blitz menu activation independently of its cosmetic fade opacity. Keep the native fade and splash visibility checks.

@@ -66,7 +66,7 @@ extern "C" void BJHUDObserve(void*board,std::uintptr_t slide){
  const int naturalH=read<int>(reinterpret_cast<void*>(slide+0x102eab158),0);
  if(boardW<320||boardW>2048||naturalW<40||naturalW>200||naturalH<30||naturalH>150)return;
  const int w=naturalW*4/5,h=naturalH*4/5;
- const int gap=std::max(6,naturalW*12/100),inset=std::max(8,naturalW*16/100);
+ const int gap=std::max(6,naturalW*12/100),inset=std::max(8,naturalW*24/100);
  const auto custom=reinterpret_cast<std::uintptr_t>(table.data())+addressPoint;
  // Left-to-right: supertool (Mystery/Detonator), tool (Scramble), hint.
  constexpr std::size_t offsets[]={0x7138,0x7130,0x7128};
@@ -80,7 +80,7 @@ extern "C" void BJHUDObserve(void*board,std::uintptr_t slide){
   // Apply the small inset once, and reapply only after native layout changes.
   // The vtable check also distinguishes a newly allocated widget at a reused address.
   const bool alreadyPlaced=vptr==custom && position.button==button && currentY==position.appliedY;
-  const int y=alreadyPlaced?currentY:currentY+8;
+  const int y=alreadyPlaced?currentY:currentY+(type==slide+0x1029d0968?8:12);
   position={button,y};
   // Native Resize moves artwork and hit testing together.
   fn<void(*)(void*,int,int,int,int)>(0x100ed0ac8)(button,x,y,w,h);

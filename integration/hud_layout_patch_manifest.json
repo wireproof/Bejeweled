@@ -5,8 +5,8 @@
       "va": "0x10008c8dc",
       "file_offset": 575708,
       "original": "fd7bbfa9fd030091",
-      "replacement": "80018052c0035fd6",
-      "reason": "SpeedBoard::GetMultiplierImageX returns 12 canvas pixels: multiplier art and text share this left anchor"
+      "replacement": "00038052c0035fd6",
+      "reason": "SpeedBoard::GetMultiplierImageX returns 24 canvas pixels to clear rounded display corners"
     }
   ]
 }
