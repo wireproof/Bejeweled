@@ -46,8 +46,8 @@ python3 tools/package_combined_test.py \
   --patches integration/window_patch_manifest.json \
   --patches integration/options_layout_patch_manifest.json \
   --patches integration/hud_layout_patch_manifest.json \
-  --version 0.0.31 --build 7866 \
-  --output dist/Bejeweled-0.0.31.ipa
+  --version 0.0.32 --build 7867 \
+  --output dist/Bejeweled-0.0.32.ipa
 ```
 
 The tool refuses to overwrite an existing output. It verifies baseline hashes, exact bytes, patch overlap, archive integrity, preserved text during library insertion, and expected changed/added members. The adjacent verification JSON records build evidence. It may contain local paths; review it before sharing.

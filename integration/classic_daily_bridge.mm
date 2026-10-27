@@ -110,7 +110,10 @@ extern "C" void BJClassicDailyObserve(void*board,std::uintptr_t slide){
    next.show=!isPaused(board)&&!suspended(board)&&!read<unsigned char>(board,0x76)&&!read<unsigned char>(board,0x36e0);
    // Pause/options drawers do not always set Board::IsGamePaused.
    void*app=read<void*>((void*)(slide+0x102fa7090),0);
-   if(app){const int hiddenY=read<int>((void*)(slide+0x102fab3fc),0);
+   if(app){
+    // Saved-game confirmation is a modal dialog, not a pause/options drawer.
+    if(reinterpret_cast<int(*)(void*)>(slide+0x100d0b82c)(app)>0 || !read<unsigned char>(board,0x74))next.show=false;
+    const int hiddenY=read<int>((void*)(slide+0x102fab3fc),0);
     for(std::size_t offset:{0xaf0,0xb00,0xb60}){void*menu=read<void*>(app,offset);
      if(menu&&read<unsigned char>(menu,0x74)&&(read<int>(menu,0x54)<hiddenY||read<int>(menu,0x120)<hiddenY))next.show=false;}
    }

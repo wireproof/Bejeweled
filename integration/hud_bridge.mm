@@ -61,6 +61,20 @@ extern "C" void BJHUDObserve(void*board,std::uintptr_t slide){
  if(!boardTable||(boardTable&7))return;
  const auto type=read<std::uintptr_t>(reinterpret_cast<void*>(boardTable-8),0);
  if(type!=slide+0x1029cc668&&type!=slide+0x1029d2548&&type!=slide+0x1029d0968)return;
+ // Native DrawOtherButton uses +0x274 only around its text pass, so fit
+ // the localized Zen label without scaling its frame or changing hit testing.
+ if(type==slide+0x1029d2548){
+  void*zen=read<void*>(board,0x8c70);
+  if(zen&&read<std::uintptr_t>(zen,0)==slide+tableVA+addressPoint){
+   void*font=read<void*>(zen,0x118);
+   if(font){auto fontTable=read<std::uintptr_t>(font,0);
+    auto measure=reinterpret_cast<int(*)(void*,const void*)>(read<std::uintptr_t>((void*)fontTable,0x48));
+    int textWidth=measure(font,static_cast<const char*>(zen)+0xf8);
+    int width=read<int>(zen,0x58);
+    if(textWidth>0&&width>32)write<float>(zen,0x274,std::clamp(float(width-32)/textWidth,0.5f,1.0f));
+   }
+  }
+ }
  const int boardW=read<int>(board,0x58);
  const int naturalW=read<int>(reinterpret_cast<void*>(slide+0x102eab154),0);
  const int naturalH=read<int>(reinterpret_cast<void*>(slide+0x102eab158),0);

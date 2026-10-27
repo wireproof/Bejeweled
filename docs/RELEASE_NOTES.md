@@ -1,3 +1,10 @@
+## 0.0.32 — 2026-10-26
+
+- Hide Classic daily counters and interception during modal dialogs, including the saved-game Resume/New Game prompt. Preserve the independent 24-hour quotas.
+- Fit the localized Zen Options text inside the native button with horizontal padding. Scale only its native text pass; preserve button artwork and touch area.
+
+Validation: host regression tests, guarded package checks, and iOS build. Installed on Duo without launching; device visual confirmation pending.
+
 ## 0.0.31 — 2026-10-26
 
 - Hide the Blitz orb while the main-menu drawer opens or remains expanded, including transitions; it no longer sits over the close control.
