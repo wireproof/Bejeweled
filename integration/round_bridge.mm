@@ -120,7 +120,13 @@ extern "C" bool BJRoundActive(void*b){auto*r=state(b);return r&&r->active&&!r->e
 extern "C" uint64_t BJRoundGeneration(void*b){auto*r=state(b);return r&&r->active?r->generation:0;}
 extern "C" bool BJRoundAddTimeTicks(void*b,int ticks){auto*r=state(b);
  if(!r||!r->active||r->ending||ticks<=0||ticks%100||ticks>6000)return false;
- r->extraSeconds=std::min(120,r->extraSeconds+ticks/100);return true;}
+ const int oldExtra=r->extraSeconds;
+ r->extraSeconds=std::min(120,oldExtra+ticks/100);
+ // GetTicksLeft caps its computed result at +8d14, initialized to6000.
+ // Extend that cap with the limit so Extra Time is visible immediately.
+ const int addedTicks=(r->extraSeconds-oldExtra)*100;
+ field<int>(b,0x8d14)=std::clamp(field<int>(b,0x8d14),0,(60+oldExtra)*100)+addedTicks;
+ return true;}
 extern "C" bool BJRoundSetMultiplier(void*b,float value){auto*r=state(b);
  if(!r||!r->active||!std::isfinite(value)||value<1||value>100)return false;
  r->multiplier=value;return true;}

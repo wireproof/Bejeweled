@@ -1,3 +1,12 @@
+# 0.0.26 — 2026-10-26
+
+- Show every equipped boost during Blitz, with AUTO/+5s indicators for passive boosts and remaining-use counts for Detonator and Scrambler.
+- Correct Multiplier conversion: create the native multiplier gem rather than a blast gem. Matching it uses native collection and point-multiplier scoring.
+- Extend the native countdown cap alongside Extra Time so the five extra seconds appear immediately as 1:05.
+- Test the round dispatcher across all 26 valid loadouts, first activation, repeat updates, pause, use limits, reset, and the 30-second multiplier interval.
+
+Mystery creates specials as matches occur; Extra Time and Multiplier run automatically. These are not tap-to-use controls. Physical gem collection, countdown, and final layout still require device confirmation. Exact original Blitz parity is not claimed; the adapter still omits the original extra-period score bonus, Scrambler speed bonus, and temporary Detonator multiplier bonus.
+
 # 0.0.25 — 2026-10-26
 
 - Lower Classic and Zen controls another four native units.

@@ -32,7 +32,7 @@ clang++ -std=c++17 -Wall -Wextra -Werror -pedantic blitz-core/test_boost_core.cp
 
 ## Status
 
-Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.25 refines gameplay control clearance, moves the Blitz multiplier inward, and enlarges Blitz power-ups; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
+Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.26 shows all equipped boosts, fixes multiplier-gem conversion, and displays the Extra Time countdown correctly; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
 
 ## Source map
 

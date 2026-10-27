@@ -3,7 +3,7 @@
 #include "loadout_bridge.hpp"
 #include "boost_bridge.hpp"
 #include "round_bridge.hpp"
-#include "../blitz-core/boost_core.hpp"
+#include "../blitz-core/boost_runtime.hpp"
 #include "../evidence/blitz-bridge-plan/native_primitives.hpp"
 #include <algorithm>
 #include <atomic>
@@ -15,23 +15,22 @@ extern "C" void BJHUDObserve(void*,std::uintptr_t);
 
 namespace {
 using namespace bejeweled_private;
-using blitz::Boost; using blitz::Event;
+using blitz::Boost;
 std::mutex queueMutex;
 struct Command { std::uint64_t generation; Boost boost; };
 std::vector<Command> queue;
 std::atomic<std::uint64_t> visibleGeneration{0};
 std::uintptr_t imageSlide=0;
 std::uint64_t currentGeneration=0;
-bool entrypointsValid=false,started=false;
-std::int64_t previousTicks=0;
-int detonatorUses=0,scramblerUses=0;
+bool entrypointsValid=false;
+blitz::BoostRuntime runtime;
 bool lastActive=false;
 uint32_t loadoutMask=7;
-bool equipped(Boost b){return (loadoutMask&(1u<<static_cast<unsigned>(b)))!=0;}
 int lastShownDetonator=-1,lastShownScrambler=-1;
 std::vector<blitz::GemSet> deferredConversions;
-blitz::DefaultBoost mystery(Boost::Mystery),detonator(Boost::Detonator),scrambler(Boost::Scrambler),extra(Boost::ExtraTime),multiplier(Boost::Multiplier);
+
 UIView* overlay=nil;
+NSArray<UIButton*>* equippedControls=nil;
 struct BoostRect {int x=0,y=0,w=0,h=0;};
 std::mutex geometryMutex;
 BoostRect toolRect,superRect;
@@ -83,9 +82,12 @@ public:
    }
    auto p=candidates[arc4random_uniform(static_cast<std::uint32_t>(candidates.size()))];
    if(to==blitz::GemSet::Multiplier) {
-    // Board::Blastify(Piece*), verified entry 0x395d5828.
+    // SpeedBoard::DropSpecialPiece sets bit4, then starts the native
+    // multiplier effect. Blastify sets bit19 and creates a different gem.
+    const std::uint32_t flags=field<std::uint32_t>(p,0x750)|0x10u;
+    std::memcpy(reinterpret_cast<char*>(p)+0x750,&flags,sizeof flags);
     using Fn=void(*)(Board*,Piece*);
-    reinterpret_cast<Fn>(imageSlide+0x100165990)(board_,p);
+    reinterpret_cast<Fn>(imageSlide+0x10015e1b0)(board_,p);
    } else switch(arc4random_uniform(3)) {
     case 0:api_.flame(board_,p);break;
     case 1:api_.hypercube(board_,p,true);break;
@@ -112,7 +114,7 @@ public:
  }
 };
 void refreshButtons(std::uint64_t generation) {
- const int d=2-detonatorUses,s=2-scramblerUses;
+ const int d=runtime.remaining(Boost::Detonator),s=runtime.remaining(Boost::Scrambler);
  if(d==lastShownDetonator&&s==lastShownScrambler)return;
  lastShownDetonator=d;lastShownScrambler=s;
  dispatch_async(dispatch_get_main_queue(),^{
@@ -151,6 +153,7 @@ void refreshButtons(std::uint64_t generation) {
 
 namespace {
 void displayOverlay(std::uint64_t generation) {
+ const uint32_t selectedMask=loadoutMask;
  dispatch_async(dispatch_get_main_queue(),^{
   if(visibleGeneration.load()!=generation)return;
   [overlay removeFromSuperview];overlay=nil;
@@ -172,26 +175,32 @@ void displayOverlay(std::uint64_t generation) {
   overlay=[[BJBoostOverlay alloc]initWithFrame:window.bounds];overlay.hidden=YES;
   overlay.backgroundColor=UIColor.clearColor;
   overlay.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-  detonateButton=[UIButton buttonWithType:UIButtonTypeCustom];scrambleButton=[UIButton buttonWithType:UIButtonTypeCustom];
-  NSArray<UIButton*>* controls=@[detonateButton,scrambleButton];
-  for(NSUInteger i=0;i<controls.count;++i){
-   UIButton* b=controls[i];b.tag=i+1;
-   b.hidden=!equipped(i==0?Boost::Detonator:Boost::Scrambler);
-   b.accessibilityLabel=i==0?@"Detonator":@"Scrambler";
-   UIImageView* icon=[[UIImageView alloc]initWithImage:BJUIAsset(i==0?@"detonator_2x.png":@"scrambler_2x.png")];
+  detonateButton=nil;scrambleButton=nil;
+  NSArray<NSString*>* names=@[@"Mystery",@"Detonator",@"Scrambler",@"Extra Time",@"Multiplier"];
+  NSArray<NSString*>* files=@[@"mystery_2x.png",@"detonator_2x.png",@"scrambler_2x.png",@"extratime_2x.png",@"multiplier_2x.png"];
+  NSMutableArray<UIButton*>* controls=[NSMutableArray new];
+  for(NSUInteger i=0;i<5;++i){
+   if(!(selectedMask&(1u<<i)))continue;
+   UIButton* b=[UIButton buttonWithType:UIButtonTypeCustom];b.tag=i;
+   const bool manual=i==1||i==2;
+   if(i==1)detonateButton=b;if(i==2)scrambleButton=b;
+   b.userInteractionEnabled=manual;
+   b.accessibilityLabel=names[i];b.accessibilityValue=manual?@"2 uses remaining":@"Automatic boost equipped";
+   UIImageView* icon=[[UIImageView alloc]initWithImage:BJUIAsset(files[i])];
    icon.contentMode=UIViewContentModeScaleAspectFit;icon.frame=b.bounds;
    icon.autoresizingMask=UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
    [b addSubview:icon];
-   UILabel* count=[UILabel new];count.tag=100;count.text=@"2";count.textColor=UIColor.whiteColor;
-   count.font=[UIFont boldSystemFontOfSize:15];count.textAlignment=NSTextAlignmentCenter;
+   UILabel* count=[UILabel new];count.tag=100;count.text=manual?@"2":i==3?@"+5s":@"AUTO";count.textColor=UIColor.whiteColor;
+   count.font=[UIFont boldSystemFontOfSize:manual?15:10];count.textAlignment=NSTextAlignmentCenter;
    count.layer.shadowColor=UIColor.blackColor.CGColor;count.layer.shadowOpacity=1;count.layer.shadowRadius=2;
    count.layer.shadowOffset=CGSizeMake(0,1);count.translatesAutoresizingMaskIntoConstraints=NO;
    [b addSubview:count];[NSLayoutConstraint activateConstraints:@[
     [count.centerXAnchor constraintEqualToAnchor:b.centerXAnchor],
     [count.bottomAnchor constraintEqualToAnchor:b.bottomAnchor constant:0]]];
-   [b addTarget:BJBoostControl.class action:@selector(pressed:) forControlEvents:UIControlEventTouchUpInside];
-   [overlay addSubview:b];
+   if(manual)[b addTarget:BJBoostControl.class action:@selector(pressed:) forControlEvents:UIControlEventTouchUpInside];
+   [overlay addSubview:b];[controls addObject:b];
   }
+  equippedControls=controls;
   [window addSubview:overlay];
  });
 }
@@ -199,13 +208,12 @@ void displayOverlay(std::uint64_t generation) {
 
 extern "C" bool BJBoostCompatible(std::uintptr_t slide) {
  NativePrimitives api(slide);
- return api.compatibleEntrypoints()&&field<std::uint32_t>(reinterpret_cast<void*>(slide+0x100165990),0)==0x395d5828;
+ return api.compatibleEntrypoints()&&field<std::uint32_t>(reinterpret_cast<void*>(slide+0x10015e1b0),0)==0xa9bd57f6;
 }
 extern "C" void BJBoostBegin(std::uintptr_t slide,std::uint64_t generation) {
- loadoutMask=BJLoadoutMask();imageSlide=slide;currentGeneration=generation;started=false;previousTicks=0;detonatorUses=scramblerUses=0;
+ loadoutMask=BJLoadoutMask();runtime.reset(loadoutMask);imageSlide=slide;currentGeneration=generation;
  {std::lock_guard<std::mutex> lock(geometryMutex);haveGeometry=false;}
  lastActive=false;lastShownDetonator=lastShownScrambler=-1;
- mystery.reset();detonator.reset();scrambler.reset();extra.reset();multiplier.reset();
  deferredConversions.clear();
  entrypointsValid=BJBoostCompatible(slide);
  {std::lock_guard<std::mutex> lock(queueMutex);queue.clear();}
@@ -221,28 +229,22 @@ extern "C" void BJBoostUpdate(void* board,std::uint64_t generation,bool active,s
  if(active!=lastActive){lastActive=active;dispatch_async(dispatch_get_main_queue(),^{if(visibleGeneration.load()==generation)overlay.hidden=!active;});}
  if(!active){std::lock_guard<std::mutex> lock(queueMutex);queue.clear();return;}
  Adapter adapter(board);
- if(!started){started=true;previousTicks=elapsedTicks;if(equipped(Boost::ExtraTime))extra.activate(Event::GameBegin,adapter);if(equipped(Boost::Multiplier))multiplier.compute(Event::GameBegin,adapter);}
+ runtime.update(true,elapsedTicks,adapter);
  adapter.retryConversions();
- // Round bridge supplies elapsed native centiseconds. Paused callbacks do not advance.
- auto delta=std::clamp<std::int64_t>(elapsedTicks-previousTicks,0,1000);previousTicks=elapsedTicks;
- for(std::int64_t i=0;equipped(Boost::Multiplier)&&i<delta;++i){multiplier.compute(Event::TimeTick,adapter);multiplier.activate(Event::TimeTick,adapter);}
  std::vector<Command> pending;{std::lock_guard<std::mutex> lock(queueMutex);pending.swap(queue);}
- for(auto c:pending)if(c.generation==generation){
-  if(equipped(Boost::Detonator)&&c.boost==Boost::Detonator&&detonatorUses<2){detonator.compute(Event::Click,adapter);if(detonator.activate(Event::Click,adapter))++detonatorUses;}
-  if(equipped(Boost::Scrambler)&&c.boost==Boost::Scrambler&&scramblerUses<2){if(scrambler.activate(Event::Click,adapter))++scramblerUses;}
- }
+ for(auto c:pending)if(c.generation==generation)runtime.click(c.boost,true,adapter);
  refreshButtons(generation);
 }
 extern "C" void BJBoostMatch(void* board,std::uint64_t generation) {
- if(!board||!entrypointsValid||!started||generation!=currentGeneration)return;
- Adapter adapter(board);if(equipped(Boost::Detonator))detonator.compute(Event::Match,adapter);if(equipped(Boost::Mystery))mystery.activate(Event::Match,adapter);
+ if(!board||!entrypointsValid||generation!=currentGeneration)return;
+ Adapter adapter(board);runtime.match(adapter);
 }
 extern "C" void BJBoostEnd(std::uint64_t generation) {
  if(generation!=currentGeneration)return;
- currentGeneration=0;entrypointsValid=false;started=false;visibleGeneration.store(0);
+ currentGeneration=0;entrypointsValid=false;visibleGeneration.store(0);
  deferredConversions.clear();
  {std::lock_guard<std::mutex> lock(queueMutex);queue.clear();}
- dispatch_async(dispatch_get_main_queue(),^{if(!visibleGeneration.load()){[overlay removeFromSuperview];overlay=nil;detonateButton=nil;scrambleButton=nil;}});
+ dispatch_async(dispatch_get_main_queue(),^{if(!visibleGeneration.load()){[overlay removeFromSuperview];overlay=nil;detonateButton=nil;scrambleButton=nil;equippedControls=nil;}});
 }
 
 extern "C" void BJBoostLayout(void* gameView,int width,int height) {
@@ -253,16 +255,17 @@ extern "C" void BJBoostLayout(void* gameView,int width,int height) {
   if(!haveGeometry)return;
   rects[0]=toolRect;rects[1]=superRect;
  }
- // Scrambler replaces the left native tool, Detonator the middle tool.
- UIButton* buttons[2]={scrambleButton,detonateButton};
- for(int i=0;i<2;++i){
-  auto r=rects[i];if(r.w<=0||r.h<=0)continue;
-  CGRect gameRect=CGRectMake(r.x*view.bounds.size.width/width,r.y*view.bounds.size.height/height,
-   r.w*view.bounds.size.width/width,r.h*view.bounds.size.height/height);
-  // Enlarge the portrait power-up art and touch area, retaining four units
-  // between adjacent hit targets and the accepted row center.
-  gameRect=CGRectInset(gameRect,-4.0*view.bounds.size.width/width,-7.5*view.bounds.size.height/height);
+ const NSUInteger count=equippedControls.count;if(!count)return;
+ const CGFloat left=std::min(rects[0].x,rects[1].x)-4.0;
+ const CGFloat right=std::max(rects[0].x+rects[0].w,rects[1].x+rects[1].w)+4.0;
+ const CGFloat gap=4.0,slotWidth=std::min<CGFloat>(88.0,(right-left-gap*(count-1))/count);
+ const CGFloat start=right-(slotWidth*count+gap*(count-1));
+ for(NSUInteger i=0;i<count;++i){
+  const auto r=rects[0];if(r.w<=0||r.h<=0)continue;
+  CGRect gameRect=CGRectMake((start+i*(slotWidth+gap))*view.bounds.size.width/width,
+   (r.y-7.5)*view.bounds.size.height/height,slotWidth*view.bounds.size.width/width,
+   (r.h+15)*view.bounds.size.height/height);
   CGRect hostRect=[view convertRect:gameRect toView:overlay];
-  if(!CGRectEqualToRect(buttons[i].frame,hostRect))buttons[i].frame=hostRect;
+  if(!CGRectEqualToRect(equippedControls[i].frame,hostRect))equippedControls[i].frame=hostRect;
  }
 }
