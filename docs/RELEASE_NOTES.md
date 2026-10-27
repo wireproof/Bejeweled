@@ -1,3 +1,15 @@
+## 0.0.30 — 2026-10-26
+
+- Classic Mystery and Shuffle each have an independent rolling limit of 10 uses per real-time 24 hours. Usage persists across relaunch, guards against backward clock changes, and displays time until the next use returns. Hints remain unlimited. Busy or ineligible actions do not spend a charge.
+- Replace the Lightning results dialog and its sample leaderboard with local Blitz results: final score, Last Hurrah bonus, highest multiplier, personal best, equipped boosts, and progress through 19 original Blitz score milestones. Preserve native final-special processing.
+- Add offline level selection for Scrambler (2–15 uses) and Multiplier (30–5 second intervals), using the original eleven-level values. All levels are freely selectable; no invented coin economy. Mystery and Extra Time remain tap-to-use as requested.
+- Stop leftover Lightning +5/+10 banked-time gems spawning in Blitz.
+- Preserve portrait layout, loading gem, and separate speed/multiplier labels.
+
+Validation: all four host test suites, guarded source checks, and iOS compilation passed. Device gameplay and the new results flow still require owner verification. Install onto Duo without launching.
+
+This begins offline expansion; Rare Gems, quests, events, online services, and full scoring parity remain unfinished. Detonator temporary multiplier, Scrambler speed bonus, and Extra Time extra-period score bonus remain unimplemented. The supplied original-game recording showed menus and download-dependent content, not its end-of-round screen; this results panel is a local adaptation.
+
 ## 0.0.29
 
 - Move the animated Blitz SPEED bonus label and value to their own column between the multiplier and score. Keep the scaling pivot and highlight clipping aligned.

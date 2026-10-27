@@ -9,6 +9,8 @@ extern "C" void BJPresentationSetMenuVisible(bool visible);
 #include "round_bridge.hpp"
 #include "ui_assets.hpp"
 #include "loadout_bridge.hpp"
+#include "results_bridge.hpp"
+#include "classic_daily_bridge.hpp"
 extern "C" void BJBoostLayout(void*,int,int);
 extern "C" void BJHUDObserve(void*,std::uintptr_t);
 
@@ -17,7 +19,8 @@ extern "C" void BJPresentationRefresh(void*);
 namespace {
 uintptr_t slide;
 IMP originalMain, originalTimer;
-std::atomic<bool> ready{false}, pending{false};
+std::atomic<bool> ready{false}, pending{false}, replayLoadout{false};
+std::atomic<int> resultAction{0};
 thread_local unsigned depth;
 __weak UIWindow *lastWindow;
 UIButton *blitzButton;
@@ -89,7 +92,7 @@ void diagnoseMenu(void *a) {
   lastTime=now;
   void *menu=read<void*>(a,0xb78);
   bool valid=menu && read<uintptr_t>(menu,0)==slide+0x1029d8f50;
-  NSString *line=[NSString stringWithFormat:@"0.0.29 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
+  NSString *line=[NSString stringWithFormat:@"0.0.30 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
     read<int>(a,0xaa4),read<uint8_t>(a,0xaa0),valid,
     valid?read<uint8_t>(menu,0x74):-1,valid?read<int>(menu,0x54):-1,
     valid?read<int>(menu,0x120):-1,native<int(*)(void*)>(0x100d0b82c)(a)];
@@ -106,8 +109,13 @@ void frame(id delegate,bool before) {
   if (!ready.load()) return;
   void *a=app();
   if (!a) return;
+  if(before){const int action=resultAction.exchange(0);if(action){
+    native<void(*)(void*,bool)>(0x10002da64)(a,false);
+    if(action==2)replayLoadout.store(true);
+  }}
   void *board=read<void*>(a,0xe58);
   BJHUDObserve(board,slide);
+  BJClassicDailyObserve(board,slide);
   BJRoundObserve(board);
   static bool sawFrame=false, sawMenu=false;
   if(!sawFrame) { sawFrame=true; logEvent(@"native frame hook reached"); }
@@ -184,10 +192,14 @@ void publishUI(id delegate,bool visible,float opacity,int width,int height,int c
     BJPresentationSetMenuVisible(visible);
     BJPresentationRefresh((__bridge void*)view);
     BJBoostLayout((__bridge void*)view,width,height);
+    BJClassicDailyLayout((__bridge void*)view,width,height);
     // UIKit children trigger EAGLView.layoutSubviews, which unconditionally
     // reallocates native renderbuffer storage. Keep controls outside that view.
     UIWindow *host=view.window;
-    if(!host || (!visible && !blitzButton))return;
+    if(!host)return;
+    BJResultsDrain(host, ^{resultAction.store(2);}, ^{resultAction.store(1);});
+    if(visible&&replayLoadout.exchange(false))BJLoadoutPresent(host, ^{if(ready.load())pending.store(true);});
+    if(!visible && !blitzButton)return;
     if (!blitzButton) {
       buttonTarget=[WPBlitzMenuTarget new];
       blitzButton=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -271,6 +283,6 @@ __attribute__((constructor)) void loadBridge() {
   (void)presentationInstalled;
   // Let Objective-C class registration and UIKit startup finish. No UIKit
   // polling timer and no runtime executable-page writes are used.
-  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.29 (7864) bridge load callback"); install();});
+  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.30 (7865) bridge load callback"); install();});
 }
 }

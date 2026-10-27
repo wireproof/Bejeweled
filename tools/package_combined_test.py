@@ -111,7 +111,7 @@ def main():
     assert not args.output.exists(), 'Never overwrite a delivered build'
     source = args.base_ipa
     assert digest(source.read_bytes()) == P3_SHA
-    sources = [ROOT / 'integration' / name for name in ('menu_bridge.mm', 'round_bridge.mm', 'boost_bridge.mm', 'presentation_bridge.mm', 'loadout_bridge.mm', 'scene_bridge.mm', 'hud_bridge.mm')]
+    sources = [ROOT / 'integration' / name for name in ('menu_bridge.mm', 'round_bridge.mm', 'boost_bridge.mm', 'presentation_bridge.mm', 'loadout_bridge.mm', 'scene_bridge.mm', 'hud_bridge.mm', 'classic_daily_bridge.mm', 'results_bridge.mm')]
     assert all(p.exists() for p in sources)
     assets_dir=args.ui_assets
     assets={APP+'WireproofUI/'+p.name:p.read_bytes() for p in sorted(assets_dir.glob('*.png'))}

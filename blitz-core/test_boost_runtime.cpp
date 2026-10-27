@@ -43,5 +43,15 @@ int main(){
   assert(r.click(Boost::Mystery,true,b)&&r.click(Boost::ExtraTime,true,b));
   assert(b.special==2&&b.time==1000);
  }
+ for(int level=0;level<=10;++level){
+  Board b;BoostRuntime r;r.reset(20,level,level);r.update(true,0,b);
+  int limit=BoostRuntime::scrambleUses(level);for(int i=0;i<limit;i++)assert(r.click(Boost::Scrambler,true,b));
+  assert(!r.click(Boost::Scrambler,true,b)&&b.scrambles==limit&&r.remaining(Boost::Scrambler)==0);
+  int period=100*BoostRuntime::multiplierSeconds(level);for(int t=1;t<period;t++)r.update(true,t,b);
+  assert(b.mult==1);r.update(false,period,b);assert(b.mult==1);r.update(true,period,b);assert(b.mult==2);
+  r.reset(20);assert(r.remaining(Boost::Scrambler)==2);
+ }
+ assert(BoostRuntime::scrambleUses(-1)==2&&BoostRuntime::scrambleUses(99)==15);
+ assert(BoostRuntime::multiplierSeconds(-1)==30&&BoostRuntime::multiplierSeconds(99)==5);
  std::cout<<"PASS: all 26 permitted loadouts, manual boost effects, no auto-use, repeat-start, pause, use limits, reset and 30-second activation\n";
 }

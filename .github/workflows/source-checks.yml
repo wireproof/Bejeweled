@@ -13,3 +13,5 @@ jobs:
       - run: /tmp/bejeweled-boost-test
       - run: g++ -std=c++17 -Wall -Wextra -Werror -pedantic blitz-core/test_boost_runtime.cpp -o /tmp/bejeweled-runtime-test
       - run: /tmp/bejeweled-runtime-test
+      - run: g++ -std=c++17 -Wall -Wextra -Werror -pedantic blitz-core/test_daily_limits.cpp -o /tmp/bejeweled-daily-test && /tmp/bejeweled-daily-test
+      - run: g++ -std=c++17 -Wall -Wextra -Werror -pedantic integration/results_test.cpp -o /tmp/bejeweled-results-test && /tmp/bejeweled-results-test

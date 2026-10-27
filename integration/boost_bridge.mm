@@ -183,7 +183,7 @@ void displayOverlay(std::uint64_t generation) {
    if(!(selectedMask&(1u<<i)))continue;
    UIButton* b=[UIButton buttonWithType:UIButtonTypeCustom];b.tag=i;
    const bool manual=i<4;
-   const int initialUses=(i==1||i==2)?2:1;
+   const int initialUses=i==2?blitz::BoostRuntime::scrambleUses(BJLoadoutBoostLevel(2)):i==1?2:1;
    b.userInteractionEnabled=manual;
    b.accessibilityLabel=names[i];b.accessibilityValue=manual?[NSString stringWithFormat:@"%d uses remaining",initialUses]:@"Automatic boost equipped";
    UIImageView* icon=[[UIImageView alloc]initWithImage:BJUIAsset(files[i])];
@@ -211,7 +211,7 @@ extern "C" bool BJBoostCompatible(std::uintptr_t slide) {
  return api.compatibleEntrypoints()&&field<std::uint32_t>(reinterpret_cast<void*>(slide+0x10015e1b0),0)==0xa9bd57f6;
 }
 extern "C" void BJBoostBegin(std::uintptr_t slide,std::uint64_t generation) {
- loadoutMask=BJLoadoutMask();runtime.reset(loadoutMask);imageSlide=slide;currentGeneration=generation;
+ loadoutMask=BJLoadoutMask();runtime.reset(loadoutMask,BJLoadoutBoostLevel(2),BJLoadoutBoostLevel(4));imageSlide=slide;currentGeneration=generation;
  {std::lock_guard<std::mutex> lock(geometryMutex);haveGeometry=false;}
  lastActive=false;lastShownUses.fill(-1);
  deferredConversions.clear();

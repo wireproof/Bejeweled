@@ -7,3 +7,5 @@ extern "C" void BJLoadoutFlush();
 #import <UIKit/UIKit.h>
 void BJLoadoutPresent(UIView* host, void (^completion)(void));
 #endif
+
+extern "C" int BJLoadoutBoostLevel(int boost);

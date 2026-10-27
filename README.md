@@ -6,7 +6,10 @@ A portrait-first iPhone and iPad adaptation of Bejeweled Classic, preserving its
 
 - Classic and Zen retain the original game engine and presentation.
 - Blitz-style 60-second rounds, a five-boost loadout with up to three selected boosts, and a locally saved best score.
-- Mystery, Detonator, Scrambler, Extra Time, and Multiplier boosts. Detonator and Scrambler each have two uses per round.
+- Mystery, Detonator, Scrambler, Extra Time, and Multiplier boosts. Detonator has two uses per round; Scrambler has selectable original levels (2–15 uses).
+- Classic Mystery and Shuffle each allow 10 uses per rolling 24 hours, saved locally; hints remain unlimited.
+- Blitz results include Last Hurrah, best score, highest multiplier, and 19 original score milestones.
+- Offline Scrambler and Multiplier level selection, without an online currency economy.
 - A triangular main menu: Blitz above Classic and Zen.
 - Portrait-only presentation, fold/resize handling, and a background that fills unused space without cropping the board.
 - An original-style boost selection panel and streamlined startup/menu flows.
@@ -32,7 +35,7 @@ clang++ -std=c++17 -Wall -Wextra -Werror -pedantic blitz-core/test_boost_core.cp
 
 ## Status
 
-Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.29 separates the Blitz speed bonus from the multiplier while retaining the gem loading badge; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
+Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.30 adds Classic daily limits, local Blitz results, and the first offline boost-level expansion; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
 
 ## Source map
 
