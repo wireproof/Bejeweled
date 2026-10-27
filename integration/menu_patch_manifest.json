@@ -1,0 +1,12 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x10002b058",
+      "file_offset": 176216,
+      "original": "37fdff97",
+      "replacement": "00008052",
+      "reason": "DoNewSpeedGame only: bypass DoSavedGameCheck so experimental round cannot resume a legacy Lightning save. Classic/Zen paths unchanged. Separate save-write suppression is required by round bridge."
+    }
+  ]
+}

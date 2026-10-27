@@ -1,0 +1,61 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x100124858",
+      "file_offset": 1198168,
+      "original": "08812091010140b9",
+      "replacement": "012148b921c00011",
+      "reason": "Center shared options section: Auto-Hint label X +48 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124864",
+      "file_offset": 1198180,
+      "original": "08912091020140b9",
+      "replacement": "022548b942640011",
+      "reason": "Center shared options section: Auto-Hint label Y +25 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124b24",
+      "file_offset": 1198884,
+      "original": "08c12091010140b9",
+      "replacement": "013148b921c00011",
+      "reason": "Center shared options section: Help label X +48 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124b30",
+      "file_offset": 1198896,
+      "original": "08d12091020140b9",
+      "replacement": "023548b942640011",
+      "reason": "Center shared options section: Help label Y +25 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124dc4",
+      "file_offset": 1199556,
+      "original": "08612091010140b9",
+      "replacement": "011948b921c00011",
+      "reason": "Center shared options section: Auto-Hint checkbox X +48 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124dd0",
+      "file_offset": 1199568,
+      "original": "08712091020140b9",
+      "replacement": "021d48b942640011",
+      "reason": "Center shared options section: Auto-Hint checkbox Y +25 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124e9c",
+      "file_offset": 1199772,
+      "original": "08a12091010140b9",
+      "replacement": "012948b921c00011",
+      "reason": "Center shared options section: Help checkbox X +48 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    },
+    {
+      "va": "0x100124ea8",
+      "file_offset": 1199784,
+      "original": "08b12091020140b9",
+      "replacement": "022d48b942640011",
+      "reason": "Center shared options section: Help checkbox Y +25 logical units from device-specific native value. Fold address add into LDR and use freed instruction for coordinate adjustment; preserve independent toggle behavior."
+    }
+  ]
+}

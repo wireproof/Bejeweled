@@ -1,0 +1,201 @@
+{
+  "ui-assets": [
+    {
+      "name": "blitz-BoostUpgradeAnim_EmptySlot.png",
+      "size": 733,
+      "sha256": "53bc2c439820e914b6a87de801a1664c9e5dbcad5679888b723d562f7773a486"
+    },
+    {
+      "name": "blitz-Check_On.png",
+      "size": 2338,
+      "sha256": "e5794b9ab91e31d8fca2500823f3444f6ac92f196643c95883b435289415b2d6"
+    },
+    {
+      "name": "blitz-N_BoostBG.png",
+      "size": 14615,
+      "sha256": "d29892087c783540785438bc00ff203022d45878b297b0fc03d36039a3ea2424"
+    },
+    {
+      "name": "blitz-N_Btn_General_Normal.png",
+      "size": 2562,
+      "sha256": "9bb04b0213fe0ca42a9e1899b72e5f3a335f8f14c42c5348fc79c75c1d303d65"
+    },
+    {
+      "name": "blitz-N_Btn_General_Pressed.png",
+      "size": 5369,
+      "sha256": "97010dcc517b58ec0e24c72bbf35917544e31061b4d0f71ff3371bfdeb2427a4"
+    },
+    {
+      "name": "blitz-N_GoldSeparator.png",
+      "size": 302,
+      "sha256": "67c613fe6f31e0122452c9cd44080be991b5f02cce716f2566395a2f77036cec"
+    },
+    {
+      "name": "blitz-N_Home_Button_Normal.png",
+      "size": 5675,
+      "sha256": "8925887f172f29fa77ab685b185013fc8b4c1b8d7580f64fbc7c51b6719c3f7e"
+    },
+    {
+      "name": "blitz-label.png",
+      "size": 10794,
+      "sha256": "2530285ca4ac262e184810ddb3fde07d59f39a8b03a5d831e45ef19f3c7ac915"
+    },
+    {
+      "name": "blitz-orb-00.png",
+      "size": 35382,
+      "sha256": "a4f64d5f002c15e09b31fa7708e6c7c139c122c53fbb2df6e7a106a205331cee"
+    },
+    {
+      "name": "blitz-orb-01.png",
+      "size": 34650,
+      "sha256": "2623e569ea38390d1fc875a684441c4ad8610f995da9d0ababd7bf64b1b2f1b5"
+    },
+    {
+      "name": "blitz-orb-02.png",
+      "size": 35398,
+      "sha256": "bbbf75355cd348d7e6e874b47ad0817cbd01f2f1e595e96878aebdd1681ee981"
+    },
+    {
+      "name": "blitz-orb-03.png",
+      "size": 34937,
+      "sha256": "a9011d5a4fa66b23f19d957ba4710acfe0ffe0087e7a0b00228d19401a3a235f"
+    },
+    {
+      "name": "blitz-orb-04.png",
+      "size": 34873,
+      "sha256": "d6390290a0fe6e6ef5c9bc51579966cfc4e5bf1af175aab695012e424dfa3066"
+    },
+    {
+      "name": "blitz-orb-05.png",
+      "size": 34188,
+      "sha256": "14745350940e2a7fbb78f2a9a5581b24244b4832b41229b8ace519d19f29c89f"
+    },
+    {
+      "name": "blitz-orb-06.png",
+      "size": 34428,
+      "sha256": "8e31de428fbf2702d6fc6c43d673afe115cdcaaff2de4154aa73d4459ccb194e"
+    },
+    {
+      "name": "blitz-orb-07.png",
+      "size": 34443,
+      "sha256": "c8169010e90c63d90441b35fdf5e73db4555fe11d496a65f579772ba9c72180e"
+    },
+    {
+      "name": "blitz-orb-08.png",
+      "size": 34746,
+      "sha256": "7b695b3dcf52a203b08e43924c61a22e207364d2e117117a9ce9ec1fee6f4b32"
+    },
+    {
+      "name": "blitz-orb-09.png",
+      "size": 34087,
+      "sha256": "907ab4868cfd58c71455cc0d92983110fd4cccc3f4244c775c1616778cec5f74"
+    },
+    {
+      "name": "blitz-orb-10.png",
+      "size": 33745,
+      "sha256": "a6ff3f14b3a6a2e0b5af1731fa64a37c8568c7724d2698086a1c9670dacac3ce"
+    },
+    {
+      "name": "blitz-orb-11.png",
+      "size": 34239,
+      "sha256": "1e8c3e74d03a86c950b7791569945e345ec2022d9c49cdc0a07b9a02c69758b3"
+    },
+    {
+      "name": "blitz-orb-12.png",
+      "size": 35042,
+      "sha256": "760f426de6dad9d76c10383b020f67552485bc3b4c4f96773b079a88e534ee33"
+    },
+    {
+      "name": "blitz-orb-13.png",
+      "size": 35255,
+      "sha256": "13b9dccf7ba6295d4f8c60fd3ec698f16d193529598160b32a8bce4e19857e2c"
+    },
+    {
+      "name": "blitz-orb-14.png",
+      "size": 35046,
+      "sha256": "db538c6388d13ad775e75054bc72032835a967707d13a7e710f028e770b2bc00"
+    },
+    {
+      "name": "blitz-orb-15.png",
+      "size": 34388,
+      "sha256": "b1a87d3b5bded065a21d18c8de76dbadfc99649393b2be8ea4f6b087953625e6"
+    },
+    {
+      "name": "blitz-orb-16.png",
+      "size": 34641,
+      "sha256": "b7d0d58a0c05261b72b3a026ea3bca8be13010aa69493b54cd5cce5daa6fd180"
+    },
+    {
+      "name": "blitz-orb-17.png",
+      "size": 34489,
+      "sha256": "bbc43001c9b0699b8c9921c2ec8eb7460aec34580d525a267f6c76a0e87e9202"
+    },
+    {
+      "name": "blitz-orb-18.png",
+      "size": 34749,
+      "sha256": "164630558014fef765d168140cff12a6c5b94765d1592e5b52719ac40187b5a0"
+    },
+    {
+      "name": "blitz-orb-19.png",
+      "size": 34217,
+      "sha256": "99ef634e40b5046ae050614a989b526228301727ad667fa8daa0297fd88f17d9"
+    },
+    {
+      "name": "detonator_2x.png",
+      "size": 53268,
+      "sha256": "168a198a8438d62ff461098ba65c84b7d1b5c15f30749f410e42810106005ef0"
+    },
+    {
+      "name": "extratime_2x.png",
+      "size": 50849,
+      "sha256": "81fd2514e02001551238644de0944d76b26c36d042749c90ca171fc7e3647019"
+    },
+    {
+      "name": "multiplier_2x.png",
+      "size": 57631,
+      "sha256": "896307312ee87a96649df32703813ac4402666a350a66a363aef2b508a405bfe"
+    },
+    {
+      "name": "mystery_2x.png",
+      "size": 52432,
+      "sha256": "e799363f35f9bb05c61b35c22b9ea0086fb9bed0c992ee994c65733f74668229"
+    },
+    {
+      "name": "scrambler_2x.png",
+      "size": 54183,
+      "sha256": "78cf283a1a00fee1a63bb83b5b28a8889af27f6dcc5dc064e9d1721d666253ab"
+    }
+  ],
+  "app-icon": [
+    {
+      "name": "WireproofIcon1024.png",
+      "size": 1112118,
+      "sha256": "c0e7006452cfbc3990916c0b60aebc37574f6213e70c70b40e6712e85b20cc94"
+    },
+    {
+      "name": "WireproofIcon60x60@2x.png",
+      "size": 29586,
+      "sha256": "9489b6ea8a747a46f0c154a0cd32420dc06ab413ecc64fe2acf71183fee35598"
+    },
+    {
+      "name": "WireproofIcon60x60@3x.png",
+      "size": 60142,
+      "sha256": "9f0bde481fd1d6277aa22fc3860b94a26a89918ceaa67515d37e45b8dd0242a4"
+    },
+    {
+      "name": "WireproofIcon76x76.png",
+      "size": 13303,
+      "sha256": "f21326a76f89eb06a1be14e4087c0dd785507c6c8b7ad6f6b00c4ade9a9676a4"
+    },
+    {
+      "name": "WireproofIcon76x76@2x.png",
+      "size": 44706,
+      "sha256": "1ef72e5bda2d4ea3029ebe29858c9531bba4b308bcee4304e3e2685d03725ae5"
+    },
+    {
+      "name": "WireproofIcon83.5x83.5@2x.png",
+      "size": 52823,
+      "sha256": "0b1aa3a4cd86fab01d71a9f5b4bb5554362cae6edc266c199fe7d5ad704d1165"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x100159b9c",
+      "file_offset": 1416092,
+      "original": "08b10391",
+      "replacement": "02ed40b9",
+      "reason": "Hint InitUI load native profile X directly"
+    },
+    {
+      "va": "0x100159ba0",
+      "file_offset": 1416096,
+      "original": "020140b9",
+      "replacement": "42500051",
+      "reason": "Hint InitUI shift visual and native hitbox left 20 canvas pixels"
+    },
+    {
+      "va": "0x100159c1c",
+      "file_offset": 1416220,
+      "original": "08910391",
+      "replacement": "02e540b9",
+      "reason": "Tool InitUI load native profile X directly"
+    },
+    {
+      "va": "0x100159c20",
+      "file_offset": 1416224,
+      "original": "020140b9",
+      "replacement": "428c0051",
+      "reason": "Tool InitUI shift visual and native hitbox left 35 canvas pixels"
+    },
+    {
+      "va": "0x100159cc8",
+      "file_offset": 1416392,
+      "original": "08710391",
+      "replacement": "02dd40b9",
+      "reason": "Supertool InitUI load native profile X directly"
+    },
+    {
+      "va": "0x100159ccc",
+      "file_offset": 1416396,
+      "original": "020140b9",
+      "replacement": "42c80051",
+      "reason": "Supertool InitUI shift visual and native hitbox left 50 canvas pixels"
+    },
+    {
+      "va": "0x10015a14c",
+      "file_offset": 1417548,
+      "original": "08b10391",
+      "replacement": "01ed40b9",
+      "reason": "Hint RefreshUI load native profile X directly"
+    },
+    {
+      "va": "0x10015a150",
+      "file_offset": 1417552,
+      "original": "010140b9",
+      "replacement": "21500051",
+      "reason": "Hint RefreshUI shift visual and native hitbox left 20 canvas pixels"
+    },
+    {
+      "va": "0x10015a18c",
+      "file_offset": 1417612,
+      "original": "08910391",
+      "replacement": "01e540b9",
+      "reason": "Tool RefreshUI load native profile X directly"
+    },
+    {
+      "va": "0x10015a198",
+      "file_offset": 1417624,
+      "original": "010140b9",
+      "replacement": "218c0051",
+      "reason": "Tool RefreshUI shift visual and native hitbox left 35 canvas pixels"
+    },
+    {
+      "va": "0x10015a1bc",
+      "file_offset": 1417660,
+      "original": "08710391",
+      "replacement": "01dd40b9",
+      "reason": "Supertool RefreshUI load native profile X directly"
+    },
+    {
+      "va": "0x10015a1c8",
+      "file_offset": 1417672,
+      "original": "010140b9",
+      "replacement": "21c80051",
+      "reason": "Supertool RefreshUI shift visual and native hitbox left 50 canvas pixels"
+    },
+    {
+      "va": "0x10008b1dc",
+      "file_offset": 569820,
+      "original": "08b10491",
+      "replacement": "022d41b9",
+      "reason": "Blitz tool InitUI load native profile X directly"
+    },
+    {
+      "va": "0x10008b1e0",
+      "file_offset": 569824,
+      "original": "020140b9",
+      "replacement": "428c0051",
+      "reason": "Blitz tool InitUI shift visual and native hitbox left 35 canvas pixels"
+    },
+    {
+      "va": "0x10008b214",
+      "file_offset": 569876,
+      "original": "08910491",
+      "replacement": "022541b9",
+      "reason": "Blitz supertool InitUI load native profile X directly"
+    },
+    {
+      "va": "0x10008b218",
+      "file_offset": 569880,
+      "original": "020140b9",
+      "replacement": "42c80051",
+      "reason": "Blitz supertool InitUI shift visual and native hitbox left 50 canvas pixels"
+    },
+    {
+      "va": "0x10008b270",
+      "file_offset": 569968,
+      "original": "08d10491",
+      "replacement": "013541b9",
+      "reason": "Blitz hint RefreshUI load native profile X directly"
+    },
+    {
+      "va": "0x10008b274",
+      "file_offset": 569972,
+      "original": "010140b9",
+      "replacement": "21500051",
+      "reason": "Blitz hint RefreshUI shift visual and native hitbox left 20 canvas pixels"
+    },
+    {
+      "va": "0x10008c8dc",
+      "file_offset": 575708,
+      "original": "fd7bbfa9fd030091",
+      "replacement": "80018052c0035fd6",
+      "reason": "SpeedBoard::GetMultiplierImageX returns 12 canvas pixels: multiplier art and text share this left anchor"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+Bejeweled — WIREPROOF mod
+
+This repository documents and implements an unofficial modification. Bejeweled,
+PopCap, EA, and original game code, artwork, audio, and trademarks remain the
+property of their respective owners. No affiliation or endorsement is implied.
+
+Original game packages and extracted visual assets are intentionally excluded.
+Use your own compatible local inputs. This project does not grant rights to
+redistribute the original game or assets. No broad open-source license is asserted
+for third-party material or for the original game through publication here.
+
+The repository includes independently written compatibility/bridge code and small
+target-specific patch descriptions. Native addresses and byte guards are tied to
+the documented baseline, not a general patch for arbitrary game versions.

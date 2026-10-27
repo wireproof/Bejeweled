@@ -1,0 +1,16 @@
+inputs/
+dist/
+releases/
+integration/ui-assets/
+integration/app-icon/
+*.ipa
+*.mobileprovision
+*.p12
+*.p8
+*.cer
+*.dylib
+*.app/
+*.dSYM/
+*.log
+__pycache__/
+.DS_Store

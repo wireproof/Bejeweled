@@ -1,0 +1,26 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x100f9ca20",
+      "file_offset": 16370208,
+      "original": "08734094",
+      "replacement": "50884094",
+      "reason": "Use finite UIScreen bounds instead of deprecated applicationFrame during legacy window initialization"
+    },
+    {
+      "va": "0x100f9cb40",
+      "file_offset": 16370496,
+      "original": "c0724094",
+      "replacement": "08884094",
+      "reason": "Use finite UIScreen bounds instead of deprecated applicationFrame during legacy window initialization"
+    },
+    {
+      "va": "0x100fa4a30",
+      "file_offset": 16402992,
+      "original": "04534094",
+      "replacement": "4c684094",
+      "reason": "Use bounds for GameViewController initial origin"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x1000b3b5c",
+      "file_offset": 736092,
+      "original": "08111391",
+      "replacement": "08c11391",
+      "reason": "Classic native widget center X6: left lower radial vertex"
+    },
+    {
+      "va": "0x1000b3b68",
+      "file_offset": 736104,
+      "original": "08711391",
+      "replacement": "08d11391",
+      "reason": "Classic native widget center Y6: lower row"
+    },
+    {
+      "va": "0x1000b3d94",
+      "file_offset": 736660,
+      "original": "08111391",
+      "replacement": "08211391",
+      "reason": "Zen native widget center X1: right lower radial vertex"
+    }
+  ]
+}

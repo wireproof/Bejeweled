@@ -1,0 +1,23 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x1000c9dd8",
+      "original": "fc6fbaa9",
+      "replacement": "c0035fd6",
+      "reason": "Disable void ShowUpgradeDialog at entry, before UIKit dialog creation or promotional defaults changes. Dedicated iPad HD upsell, not game dialogs."
+    },
+    {
+      "va": "0x100fa1298",
+      "original": "ff8301d1fd7b05a9fd430191e80301aaa0c31fb8a8031ff8a2831ef8e8f300d0002542f989b24194e10740f927764094e10740f9e00f00fde11300fde21700fde31b00fde8f300d0006d40f9f7f04294e10740f9",
+      "replacement": "ffc300d1fd7b02a9fd830091e10b00a9e8f300d0009940f974b24094f35243941f0400f1083c8052094780522901881a082880520001231e2101231ee10b40a9200000bd410000bdfd7b42a9ffc30091c0035fd6",
+      "reason": "Stable device-idiom portrait canvas: phones320x480, iPad320x568; framebuffer exactly2x. Does not change profile when folding."
+    },
+    {
+      "va": "0x100fa1400",
+      "original": "ff0301d1fd7b03a9fdc30091e80301aaa0831ff8a8031ff8e20f00f900102e1ee01700bde8f300d0002542f92db24194e10340f9c8f2009002f147f9b93342946001003601000014",
+      "replacement": "ffc300d1fd7b02a9fd830091e10b00a9e1430091e2530091a0ffff97e007422d0800381e2900381e08791f5329791f53e10b40a9280000b9490000b9fd7b42a9ffc30091c0035fd6",
+      "reason": "Stable device-idiom portrait canvas: phones320x480, iPad320x568; framebuffer exactly2x. Does not change profile when folding."
+    }
+  ]
+}

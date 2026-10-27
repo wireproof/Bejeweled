@@ -1,0 +1,12 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x100085f80",
+      "file_offset": 548736,
+      "original": "097b0190293dc9390901f837097b0190",
+      "replacement": "1f7d00a91f0900f9c0035fd61f2003d5",
+      "reason": "SpeedBoard GetSavedGameName only returns empty native 24-byte short string through x8, disabling legacy timed save read/write/delete before factory and after round attachment. SaveGame bool/HasSavedGame/DeleteSavedGame all check empty length before filesystem access. Classic and Zen names unchanged."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "source_executable_sha256": "83a709bcc92fa36a3f567cda6e33652873a2c7c47c50142c008a15cf1f4eadc0",
+  "patches": [
+    {
+      "va": "0x100124a80",
+      "file_offset": 1198720,
+      "original": "020140b9",
+      "replacement": "e2ff8f12",
+      "reason": "OptionsContainer constructor: position Promotions label at Y=-32768 outside visible and touch area; retain allocation, AddWidget ownership, and destruction. Replaces ldr w2,[x8] with mov w2,#-32768."
+    },
+    {
+      "va": "0x100124f18",
+      "file_offset": 1199896,
+      "original": "020140b9",
+      "replacement": "e2ff8f12",
+      "reason": "OptionsContainer constructor: position Promotions checkbox at Y=-32768 outside visible and touch area; retain allocation, AddWidget ownership, and destruction. Replaces ldr w2,[x8] with mov w2,#-32768."
+    }
+  ]
+}
