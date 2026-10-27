@@ -1,3 +1,12 @@
+# 0.0.28 — 2026-10-26
+
+- Replace PopCap lettering in the private loading badge with a centered blue faceted gem.
+- Retain the original ring except the small lettering overhang repair; preserve outer alpha, native loader animation, timing, and resource dimensions in both resolution variants.
+- Add a bounded loader archive packager that verifies other resource groups remain identical. Derivative game textures are private build inputs.
+- Preserve 0.0.27 boost behavior. All 26 loadout logic tests passed previously; native code paths were inspected, but complete device gameplay validation remains pending. Detonator temporary multiplier and Scrambler speed bonuses remain unimplemented.
+
+Install on Duo without launching.
+
 # 0.0.27 — 2026-10-26
 
 - Make Mystery and Extra Time tap-to-use, one use each per round, as requested.

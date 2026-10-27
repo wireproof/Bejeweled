@@ -102,6 +102,8 @@ def main():
     parser.add_argument('--ui-assets', type=Path, default=ROOT / 'integration/ui-assets')
     parser.add_argument('--icons', type=Path, default=ROOT / 'integration/app-icon')
     parser.add_argument('--insert-dylib', type=Path, required=True)
+    parser.add_argument('--loader-rsb', type=Path, help='Private loader texture archive produced by package_loader_texture.py')
+    parser.add_argument('--loader-report', type=Path)
     args = parser.parse_args()
     assert re.fullmatch(r'(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)', args.version), 'Use major.minor.patch'
     assert args.build.isdecimal() and int(args.build) > 7835, 'Build must advance beyond delivered P5'
@@ -174,6 +176,14 @@ def main():
             info['CFBundleIcons~ipad']=info['CFBundleIcons']
             replacements = {APP + 'Bejeweled': injected,
                             APP + 'Info.plist': plistlib.dumps(info, fmt=plistlib.FMT_BINARY, sort_keys=False)}
+            if args.loader_rsb:
+                assert args.loader_report, 'Loader patch report required'
+                report = json.loads(args.loader_report.read_text())
+                replacement = args.loader_rsb.read_bytes()
+                assert digest(archive.read(APP+'main.rsb')) == report['source_sha256']
+                assert digest(replacement) == report['output_sha256']
+                assert report['other_group_records_and_payloads_identical']
+                replacements[APP+'main.rsb'] = replacement
             hashes = {item.filename: digest(archive.read(item)) for item in archive.infolist()}
             with zipfile.ZipFile(args.output, 'x', compression=zipfile.ZIP_DEFLATED) as output:
                 for item in archive.infolist():

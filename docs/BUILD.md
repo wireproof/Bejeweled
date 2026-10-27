@@ -46,8 +46,8 @@ python3 tools/package_combined_test.py \
   --patches integration/window_patch_manifest.json \
   --patches integration/options_layout_patch_manifest.json \
   --patches integration/hud_layout_patch_manifest.json \
-  --version 0.0.27 --build 7862 \
-  --output dist/Bejeweled-0.0.27.ipa
+  --version 0.0.28 --build 7863 \
+  --output dist/Bejeweled-0.0.28.ipa
 ```
 
 The tool refuses to overwrite an existing output. It verifies baseline hashes, exact bytes, patch overlap, archive integrity, preserved text during library insertion, and expected changed/added members. The adjacent verification JSON records build evidence. It may contain local paths; review it before sharing.
@@ -69,3 +69,5 @@ Keep the same bundle identifier and signing team for updates. Do not uninstall a
 ## Device checks
 
 Verify cold launch, cover-to-inner folding, portrait stability, background/foreground, Classic and Zen settings, every lower control's touch target, Blitz loadout persistence, countdown, multiplier visibility, and best-score persistence. Host tests cannot establish these physical behaviors.
+
+Optional private loading badge: use `tools/package_loader_texture.py` with the baseline main.rsb and edited 184×184 / 367×368 badge PNGs, then supply its output with `--loader-rsb` and its verification JSON with `--loader-report`. These derivative textures remain private; native loading code and resource geometry stay unchanged.
