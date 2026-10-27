@@ -7,6 +7,48 @@
       "original": "fd7bbfa9fd030091",
       "replacement": "00038052c0035fd6",
       "reason": "SpeedBoard::GetMultiplierImageX returns 24 canvas pixels to clear rounded display corners"
+    },
+    {
+      "va": "0x10018a3f8",
+      "file_offset": 1614840,
+      "original": "080140b9",
+      "replacement": "080d8052",
+      "reason": "DrawSpeedBonus: place label/value, scaling pivot and highlight at x=104 between left multiplier and centered score"
+    },
+    {
+      "va": "0x10018a4fc",
+      "file_offset": 1615100,
+      "original": "c20240b9",
+      "replacement": "020d8052",
+      "reason": "DrawSpeedBonus: place label/value, scaling pivot and highlight at x=104 between left multiplier and centered score"
+    },
+    {
+      "va": "0x10018a520",
+      "file_offset": 1615136,
+      "original": "220340b9",
+      "replacement": "020d8052",
+      "reason": "DrawSpeedBonus: place label/value, scaling pivot and highlight at x=104 between left multiplier and centered score"
+    },
+    {
+      "va": "0x10018a5f8",
+      "file_offset": 1615352,
+      "original": "c90240b9",
+      "replacement": "090d8052",
+      "reason": "DrawSpeedBonus: place label/value, scaling pivot and highlight at x=104 between left multiplier and centered score"
+    },
+    {
+      "va": "0x10018a614",
+      "file_offset": 1615380,
+      "original": "c20240b9",
+      "replacement": "020d8052",
+      "reason": "DrawSpeedBonus: place label/value, scaling pivot and highlight at x=104 between left multiplier and centered score"
+    },
+    {
+      "va": "0x10018a628",
+      "file_offset": 1615400,
+      "original": "220340b9",
+      "replacement": "020d8052",
+      "reason": "DrawSpeedBonus: place label/value, scaling pivot and highlight at x=104 between left multiplier and centered score"
     }
   ]
 }

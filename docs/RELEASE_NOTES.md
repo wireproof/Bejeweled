@@ -1,3 +1,9 @@
+## 0.0.29
+
+- Move the animated Blitz SPEED bonus label and value to their own column between the multiplier and score. Keep the scaling pivot and highlight clipping aligned.
+- Preserve the gem loading badge and existing boost behavior.
+- Installed on Duo without launching; physical gameplay appearance remains to be checked.
+
 # 0.0.28 — 2026-10-26
 
 - Replace PopCap lettering in the private loading badge with a centered blue faceted gem.
