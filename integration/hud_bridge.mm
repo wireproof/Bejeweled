@@ -20,15 +20,22 @@ void draw(void*button,void*graphics){
  const int originalW=read<int>(reinterpret_cast<void*>(imageSlide+0x102eab154),0);
  const int originalH=read<int>(reinterpret_cast<void*>(imageSlide+0x102eab158),0);
  if(originalW<=0||originalH<=0){fn<void(*)(void*,void*)>(0x100128cbc)(button,graphics);return;}
- // Graphics::SetScale stores scale and pivot at0x18..0x24. The caller's
- // translation at0x10/0x14 is retained. Restore all four fields after drawing.
- float saved[4];std::memcpy(saved,static_cast<char*>(graphics)+0x18,sizeof saved);
- fn<void(*)(void*,float,float,float,float)>(0x100d38c98)(graphics,
-    saved[0]*float(w)/originalW,saved[1]*float(h)/originalH,0.0f,0.0f);
+ // DrawImageBox places nine-slice pieces in native coordinates. Graphics'
+ // per-image SetScale shrinks each piece without moving the neighbouring
+ // piece's origin, leaving seams. Apply one renderer matrix AFTER native
+ // assembly instead, so borders, middle, icon and count transform together.
+ void* g3d=fn<void*(*)(void*)>(0x100d34fec)(graphics);
+ if(!g3d){fn<void(*)(void*,void*)>(0x100128cbc)(button,graphics);return;}
+ const float sx=float(w)/originalW,sy=float(h)/originalH;
+ const float tx=read<float>(graphics,0x10),ty=read<float>(graphics,0x14);
+ // SexyMatrix3: nine row-major floats. TranslateEff writes elements2/5;
+ // ScaleEff multiplies rows0/1. Pivot at the current graphics translation.
+ const float matrix[9]={sx,0.0f,tx*(1.0f-sx),0.0f,sy,ty*(1.0f-sy),0.0f,0.0f,1.0f};
+ fn<void(*)(void*,const float*,bool)>(0x100d3b9d4)(g3d,matrix,true);
  write(button,0x58,originalW);write(button,0x5c,originalH);
  fn<void(*)(void*,void*)>(0x100128cbc)(button,graphics);
  write(button,0x58,w);write(button,0x5c,h);
- std::memcpy(static_cast<char*>(graphics)+0x18,saved,sizeof saved);
+ fn<void(*)(void*)>(0x100d3ba24)(g3d);
 }
 bool prepare(std::uintptr_t slide){
  if(initialized)return compatible&&slide==imageSlide;
@@ -36,7 +43,9 @@ bool prepare(std::uintptr_t slide){
  auto source=reinterpret_cast<void*>(slide+tableVA);
  if(read<std::uintptr_t>(source,addressPoint+drawSlot)!=slide+0x100128cbc ||
     read<std::uintptr_t>(source,addressPoint+0x148)!=slide+0x100129050 ||
-    read<std::uint32_t>(reinterpret_cast<void*>(slide+0x100d38c98),0)!=0xd10083ff)return false;
+    read<std::uint32_t>(reinterpret_cast<void*>(slide+0x100d34fec),0)!=0xd10043ff ||
+    read<std::uint32_t>(reinterpret_cast<void*>(slide+0x100d3b9d4),0)!=0xd100c3ff ||
+    read<std::uint32_t>(reinterpret_cast<void*>(slide+0x100d3ba24),0)!=0xd10083ff)return false;
  std::memcpy(table.data(),source,tableBytes);
  table[(addressPoint+drawSlot)/sizeof(std::uintptr_t)]=reinterpret_cast<std::uintptr_t>(&draw);
  compatible=true;return true;

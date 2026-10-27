@@ -1,3 +1,11 @@
+# 0.0.23 — 2026-10-26
+
+- Scale each lower native control as a complete drawing, fixing the cross-shaped gaps introduced by per-piece scaling in 0.0.22. Keep the smaller artwork and matching touch layout.
+- Synchronize the Blitz menu overlay with the native menu transition so it does not appear over the splash screen.
+- Lift Home and Play eight panel units inside the boost selector for cleaner bottom-border clearance.
+
+Physical appearance and touch behavior require device confirmation. These changes preserve portrait presentation, gameplay, boost selection, scores, and the accepted top-left multiplier.
+
 # 0.0.22 — 2026-10-26
 
 - Remove the loading/gameplay inset so the splash, menu, and board use the same full-window bounds.

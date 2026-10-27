@@ -5,6 +5,7 @@ extern "C" void BJPresentationSetMenuVisible(bool visible);
 #include <atomic>
 #include <cstdint>
 #include <cstring>
+#include <cmath>
 #include "round_bridge.hpp"
 #include "ui_assets.hpp"
 #include "loadout_bridge.hpp"
@@ -54,8 +55,30 @@ bool menuAvailable(void *a) {
   if (!a || read<int>(a,0xaa4)!=1 || read<uint8_t>(a,0xaa0)) return false;
   void *menu=read<void*>(a,0xb78);
   if (!menu || read<uintptr_t>(menu,0)!=slide+0x1029d8f50 || !read<uint8_t>(menu,0x74)) return false;
+  // MainMenu exists during the publisher-logo sequence. Its native queue
+  // must be empty before a menu control may draw above the game surface.
+  if (read<uintptr_t>(menu,0x6a0)!=read<uintptr_t>(menu,0x6a8)) return false;
   if (read<int>(menu,0x54)!=read<int>(menu,0x120)) return false;
   return native<int(*)(void*)>(0x100d0b82c)(a)==0;
+}
+float menuOpacity(void *a) {
+  void *menu=read<void*>(a,0xb78);
+  void *container=read<void*>(menu,0x698);
+  if(!container || read<uintptr_t>(container,0)!=slide+0x1029d9388 ||
+     !read<uint8_t>(container,0x74))return 0;
+  // Zen's CrystalBall is the first retained native orb. Match its authored
+  // intro curve instead of starting a separate wall-clock UIKit animation.
+  void *orb=read<void*>(container,0x338);
+  if(!orb || read<uintptr_t>(orb,0)!=slide+0x1029cc690 ||
+     !read<uint8_t>(orb,0x74))return 0;
+  auto curve=[](void *object,size_t offset) {
+    return native<float(*)(void*)>(0x100f00a98)(static_cast<uint8_t*>(object)+offset);
+  };
+  // CrystalBall::DrawCrystal (0x100058618), multiplied by the two
+  // Bej3Widget::DrawAll parent color factors (0x10012307c).
+  float opacity=curve(orb,0x1c8)*read<float>(orb,0xe0c)*
+    curve(container,0x138)*curve(menu,0x138);
+  return std::isfinite(opacity)?fminf(1.0f,fmaxf(0.0f,opacity)):0.0f;
 }
 void diagnoseMenu(void *a) {
   static unsigned samples=0;
@@ -66,7 +89,7 @@ void diagnoseMenu(void *a) {
   lastTime=now;
   void *menu=read<void*>(a,0xb78);
   bool valid=menu && read<uintptr_t>(menu,0)==slide+0x1029d8f50;
-  NSString *line=[NSString stringWithFormat:@"0.0.22 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
+  NSString *line=[NSString stringWithFormat:@"0.0.23 menu: state=%d busy=%u valid=%d visible=%d y=%d target=%d dialogs=%d",
     read<int>(a,0xaa4),read<uint8_t>(a,0xaa0),valid,
     valid?read<uint8_t>(menu,0x74):-1,valid?read<int>(menu,0x54):-1,
     valid?read<int>(menu,0x120):-1,native<int(*)(void*)>(0x100d0b82c)(a)];
@@ -78,7 +101,7 @@ UIView *findGameView(UIView *view) {
   for (UIView *child in view.subviews) { UIView *found=findGameView(child); if(found)return found; }
   return nil;
 }
-void publishUI(id delegate,bool visible,int width,int height,int cx,int cy);
+void publishUI(id delegate,bool visible,float opacity,int width,int height,int cx,int cy);
 void frame(id delegate,bool before) {
   if (!ready.load()) return;
   void *a=app();
@@ -106,7 +129,7 @@ void frame(id delegate,bool before) {
     available=false;
   }
   if (!before) {
-    publishUI(delegate,available && ready.load(),read<int>(a,0x124),read<int>(a,0x128),
+    publishUI(delegate,available && ready.load(),available?menuOpacity(a):0.0f,read<int>(a,0x124),read<int>(a,0x128),
       read<int>(reinterpret_cast<void*>(slide+0x102fab4c4),0),
       read<int>(reinterpret_cast<void*>(slide+0x102fab4dc),0));
   }
@@ -137,7 +160,7 @@ void timerHook(id self,SEL cmd) {
 @end
 
 namespace {
-void publishUI(id delegate,bool visible,int width,int height,int cx,int cy) {
+void publishUI(id delegate,bool visible,float opacity,int width,int height,int cx,int cy) {
   dispatch_block_t block=^{
     SEL viewSEL=NSSelectorFromString(@"view");
     UIView *root=nil;
@@ -208,8 +231,9 @@ void publishUI(id delegate,bool visible,int width,int height,int cx,int cy) {
         width,height,NSStringFromCGRect(view.bounds),NSStringFromCGRect(host.bounds),
         NSStringFromCGRect(rect),view.hidden,view.alpha]);
     }
-    blitzButton.hidden=!visible || !ready.load();
-    blitzButton.enabled=visible && ready.load() && !pending.load();
+    blitzButton.alpha=opacity;
+    blitzButton.hidden=!visible || opacity<=0.0f || !ready.load();
+    blitzButton.enabled=visible && opacity>=0.99f && ready.load() && !pending.load();
   };
   if(NSThread.isMainThread)block(); else dispatch_async(dispatch_get_main_queue(),block);
 }
@@ -229,7 +253,8 @@ void install() {
     slide=candidate; found=true; break;
   }
   if(!found) { logEvent(@"install failed: native IMP image identity mismatch"); return; }
-  if(!word(0x10002abbc,0xb90aac01) || !word(0x10002da64,0xd10283ff) ||
+  if(!word(0x100f00a98,0xd100c3ff) || !word(0x100058618,0x91072000) ||
+     !word(0x10002abbc,0xb90aac01) || !word(0x10002da64,0xd10283ff) ||
      !word(0x100d0b82c,0xd10083ff) || !word(0x10002b058,0x52800000)) {
     logEvent(@"install failed: native entry or timed save-read patch mismatch"); return;
   }
@@ -244,6 +269,6 @@ __attribute__((constructor)) void loadBridge() {
   (void)presentationInstalled;
   // Let Objective-C class registration and UIKit startup finish. No UIKit
   // polling timer and no runtime executable-page writes are used.
-  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.22 (7855) bridge load callback"); install();});
+  dispatch_async(dispatch_get_main_queue(),^{logEvent(@"0.0.23 (7855) bridge load callback"); install();});
 }
 }
