@@ -17,13 +17,13 @@ A portrait-first iPhone and iPad adaptation of Bejeweled Classic, preserving its
 
 ## What this repository contains
 
-Mod bridge source, guarded ARM64 patch manifests, a packaging tool, and boost-core tests. It does **not** include the original game executable, game artwork/audio, prepared IPAs, Apple provisioning profiles, or signing credentials. Bejeweled and its original assets belong to their respective owners. This is an independent, unofficial modification, not an EA or PopCap release.
+Mod bridge source, guarded ARM64 patch manifests, a packaging tool, and boost-core tests. It does **not** include the original game executable, game artwork/audio, Apple provisioning profiles or signing credentials. Bejeweled and its original assets belong to their respective owners. This is an independent, unofficial modification, not an EA or PopCap release.
 
 **This is not a standalone game or a source port of the original engine.** Blitz currently adapts Classic's timed engine; it does not bundle the separate Bejeweled Blitz engine and does not claim identical scoring or every Blitz feature. Rare Gems, online leaderboards, accounts, shops, and currency systems are not implemented. Some original Lightning presentation remains.
 
 ## Build and install
 
-See [Build instructions](docs/BUILD.md). Native patches target one exact prepared P3 baseline and refuse mismatched inputs. You need your own compatible local game package, UI assets, Xcode, and signing setup. The repository alone cannot produce a playable IPA.
+See [Build instructions](docs/BUILD.md). Native patches target one exact prepared P3 baseline and refuse mismatched inputs. You need your own compatible local game package, UI assets, Xcode, and signing setup. The repository alone cannot produce a playable IPA. An unsigned IPA is available on the [0.0.32 release page](https://github.com/wireproof/Bejeweled/releases/tag/v0.0.32); it requires your own signing and provisioning.
 
 Run the asset-independent checks:
 
