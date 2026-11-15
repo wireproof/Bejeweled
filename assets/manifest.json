@@ -1535,6 +1535,11 @@
       "path": "integration/app-icon/source.jpg",
       "size": 117361,
       "sha256": "dc4d6009eebcffcffa43bd28af71e2787a5fd9929d3adfe753a3462a9889b797"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/OMLICENSE",
+      "size": 18520,
+      "sha256": "c17da41e8cc7b68c56ce8fb54f3753bce8ccae999ee569865e38d67dd78d0927"
     }
   ]
 }
