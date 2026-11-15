@@ -17,16 +17,16 @@ P3 is an earlier privately prepared baseline, **not an unmodified App Store down
 
 ## Prepare local inputs
 
-Keep all private inputs under ignored `inputs/`:
+Keep the baseline and insertion utility under ignored `inputs/`; included artwork lives in `integration/`:
 
 ```text
 inputs/Bejeweled-P3.ipa
-inputs/ui-assets/           # PNGs listed in docs/asset-inputs.json
-inputs/app-icon/            # six PNGs listed in docs/asset-inputs.json
+integration/ui-assets/           # PNGs listed in docs/asset-inputs.json
+integration/app-icon/            # six PNGs listed in docs/asset-inputs.json
 inputs/insert_dylib         # separately supplied executable
 ```
 
-The asset inventory records names, sizes and hashes only. It does not supply artwork. The UI uses the named original-style PNGs and twenty orb animation frames; do not substitute files with different geometry without adjusting the layout code. The chosen app icon is also a private input.
+Artwork and icons are included in the integration directories. Packaged runtime assets are in assets/runtime; assets/manifest.json records their hashes. The UI uses the named original-style PNGs and twenty orb animation frames; do not substitute files with different geometry without adjusting the layout code. The approved app icon is included.
 
 ## Package
 
@@ -35,8 +35,8 @@ mkdir -p dist
 python3 tools/check_source.py
 python3 tools/package_combined_test.py \
   --base-ipa inputs/Bejeweled-P3.ipa \
-  --ui-assets inputs/ui-assets \
-  --icons inputs/app-icon \
+  --ui-assets integration/ui-assets \
+  --icons integration/app-icon \
   --insert-dylib inputs/insert_dylib \
   --patches integration/menu_patch_manifest.json \
   --patches integration/round_patch_manifest.json \
@@ -70,4 +70,4 @@ Keep the same bundle identifier and signing team for updates. Do not uninstall a
 
 Verify cold launch, cover-to-inner folding, portrait stability, background/foreground, Classic and Zen settings, every lower control's touch target, Blitz loadout persistence, countdown, multiplier visibility, and best-score persistence. Host tests cannot establish these physical behaviors.
 
-Optional private loading badge: use `tools/package_loader_texture.py` with the baseline main.rsb and edited 184×184 / 367×368 badge PNGs, then supply its output with `--loader-rsb` and its verification JSON with `--loader-report`. These derivative textures remain private; native loading code and resource geometry stay unchanged.
+Optional private loading badge: use `tools/package_loader_texture.py` with the baseline main.rsb and edited 184×184 / 367×368 badge PNGs, then supply its output with `--loader-rsb` and its verification JSON with `--loader-report`. The completed loader texture is included in assets/runtime/main.rsb; native loading code and resource geometry stay unchanged.

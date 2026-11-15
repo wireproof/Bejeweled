@@ -1,8 +1,6 @@
 inputs/
 dist/
 releases/
-integration/ui-assets/
-integration/app-icon/
 *.ipa
 *.mobileprovision
 *.p12

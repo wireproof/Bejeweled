@@ -1,0 +1,1540 @@
+{
+  "release": "0.0.32",
+  "files": [
+    {
+      "path": "assets/runtime/AppIcon60x60@2x.png",
+      "size": 37348,
+      "sha256": "4a5d055eee252e9b1347db29b9c4cc787672454cf045131055b3f5d09117a79f"
+    },
+    {
+      "path": "assets/runtime/Assets.car",
+      "size": 2823144,
+      "sha256": "b3eab727389cf4b88bfea9107d047100b32153e26ce6631e69a2544a03da5dd3"
+    },
+    {
+      "path": "assets/runtime/CleanLaunch.storyboardc/UIViewController-clean-controller.nib",
+      "size": 930,
+      "sha256": "159d14bb1785fee89d745072149daff3e73ffcb089862c674f04430b51f6e5f7"
+    },
+    {
+      "path": "assets/runtime/CleanLaunch.storyboardc/clean-controller-view-clean-view.nib",
+      "size": 2669,
+      "sha256": "736abc07eec0eec24c0e7001768a271886752f8e62a25efabc02a2827876ff1c"
+    },
+    {
+      "path": "assets/runtime/DraperView~iphone.nib",
+      "size": 2572,
+      "sha256": "7f22f27888897a2a02030f5f56d74d980b0ec6580b5fa11a7a17d86de9ef5c3b"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/ALDDetailTableViewCell.nib",
+      "size": 5573,
+      "sha256": "fc45428653d158a8f17e274897d7f390a7210d047868cdf622d620568161fbfd"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/ALDMultiAdViewController.storyboardc/3jf-B1-XNL-view-Iqa-CO-DFs.nib",
+      "size": 17805,
+      "sha256": "5b5a7ee80b3bfbb16394a2476f2d3b66eaa3b862e244e26dd8f7b166a9c53fe4"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/ALDMultiAdViewController.storyboardc/ALDMultiAdViewController.nib",
+      "size": 8360,
+      "sha256": "0f92720c3f65328a349387f944c2c7e1ebd94b5f675b96f06fafc41efdf8e504"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/ALDRightDetailTableViewCell.nib",
+      "size": 4661,
+      "sha256": "ed807f6ec286e05eae5f8b4575c3cd77d7f2498966dcfad40fde2ffa6b5d8434"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/Assets.car",
+      "size": 293007,
+      "sha256": "f462880bf358cfdcd4a5b188098bc5569cbf93975db3bed2f3bea1c79efc9ff6"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/Base.lproj/Localizable.strings",
+      "size": 532,
+      "sha256": "24f640286a4076d74171410cd6e81ccd8e06688e63557f92c0fb7ebc1b3d915e"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdBannerView.nib",
+      "size": 8012,
+      "sha256": "4e5e34899fa0af94927c9263ca367cbc85088e0fdffa4b46ec311334bffd43dd"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdLeaderView.nib",
+      "size": 7760,
+      "sha256": "183b9be44bd7a8c0541053d0ed473649a649be8aca8e41367a08dc28326d0133"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdMRecView.nib",
+      "size": 8555,
+      "sha256": "bd7aed459e785e6f336ee8025e6fd7d18d3a6da238038cc7eea94f3f8a736b3e"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdMediaBannerView.nib",
+      "size": 7343,
+      "sha256": "e5ab39b67dbae6a780f2b9b4a4282b9ff2d9a09a5bfe8ff1844982935a331fb2"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdTemplate1.nib",
+      "size": 8764,
+      "sha256": "cb7e499ada52d8ad1a010cd893826703dd1c6400731df046a27bd9d66dc4e227"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdVerticalBannerView.nib",
+      "size": 7083,
+      "sha256": "0ab752bc0d15462abe4bad24497fae97a3d83909a69dc556bf9241277b1c1c03"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdVerticalLeaderView.nib",
+      "size": 7546,
+      "sha256": "3e770eb77e9c7dd9e4fe1889b43e15da7f693bd82603e02acfa9cf79219d5d62"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/MANativeAdVerticalMediaBannerView.nib",
+      "size": 7346,
+      "sha256": "8329f43960d3b72a4bf63e3d0e026e0ec26945f323dbe27fb9d875a5d94a7c36"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/de.lproj/Localizable.strings",
+      "size": 798,
+      "sha256": "8d1b8effefe0baafc8c0b86625255ad6fa682a12e52be418fad2f523640aab29"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/en.lproj/Localizable.strings",
+      "size": 532,
+      "sha256": "24f640286a4076d74171410cd6e81ccd8e06688e63557f92c0fb7ebc1b3d915e"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/es.lproj/Localizable.strings",
+      "size": 988,
+      "sha256": "c5198180e855ecd617d17897ecd05b26e0ff793bf6fdaa60cf7a6ef2e9b8b92d"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/fr.lproj/Localizable.strings",
+      "size": 802,
+      "sha256": "3737477a785c92b0e345c4418618d9fcd9ce6e97792ea207e93d472aee2aea9e"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/ja.lproj/Localizable.strings",
+      "size": 483,
+      "sha256": "73995510a254dac2a0e28bd87c9fc65845d4e2cc06cccd73d712ef158d02c3e9"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/ko.lproj/Localizable.strings",
+      "size": 523,
+      "sha256": "4ae030babc66b2b4e70dc4bee686d54c579595728f029aa324682f404c6f3991"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/mute.aiff",
+      "size": 1656,
+      "sha256": "5944ed3b29e814f111b7bb5b329ab00cfbf7617f447d98d00cbcf55f7851570c"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/omsdk-v1.5.3.js",
+      "size": 46064,
+      "sha256": "de158185bcedb91e9190f3af33c991cb2915952d35b60050f8504800acd32cce"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/zh-Hans.lproj/Localizable.strings",
+      "size": 444,
+      "sha256": "28ba859a45959e02f313aefe1ce953bef91064fb4c92a9ea71a2614071d8b3a8"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/AppLovinSDKResources.bundle/zh-Hant.lproj/Localizable.strings",
+      "size": 444,
+      "sha256": "1bb36e209e8b8da1115bb83ed585f18de1d15bc167d4d759b6ba111dd61b9abc"
+    },
+    {
+      "path": "assets/runtime/Frameworks/AppLovinSDK.framework/PrivacyInfo.xcprivacy",
+      "size": 511,
+      "sha256": "80e38881dbfb3b165f9ef35cfa43b28eac00d5b18058a127588c294193841c9f"
+    },
+    {
+      "path": "assets/runtime/Frameworks/ISAdMobAdapter.framework/GoogleMobileAdsResources.bundle/PrivacyInfo.xcprivacy",
+      "size": 4491,
+      "sha256": "69fb112582fc23fc06c635c961d262a3f7b4b5654d284787491de3000dadf9d2"
+    },
+    {
+      "path": "assets/runtime/Frameworks/ISAdMobAdapter.framework/IronSourcePrivacyInfo.bundle/PrivacyInfo.xcprivacy",
+      "size": 724,
+      "sha256": "112ff01cf511ae1aa85aa968b87e89c9523963b14a635a6069632991b3c6a341"
+    },
+    {
+      "path": "assets/runtime/Frameworks/ISAdMobAdapter.framework/UserMessagingPlatformResources.bundle/PrivacyInfo.xcprivacy",
+      "size": 1677,
+      "sha256": "45b7adb99fcd2d962a1c800fbfcc1325b57a7fa4165f416182323bb5ffe9c900"
+    },
+    {
+      "path": "assets/runtime/GluCentralServices.bundle/consentform.html",
+      "size": 194700,
+      "sha256": "1caaa72676817ae9bf23a544373540bc8351944767aff7f42c410c3f7bd85fcb"
+    },
+    {
+      "path": "assets/runtime/PlugIns/GluCentralServices.bundle/consentform.html",
+      "size": 194700,
+      "sha256": "1caaa72676817ae9bf23a544373540bc8351944767aff7f42c410c3f7bd85fcb"
+    },
+    {
+      "path": "assets/runtime/PrivacyInfo.xcprivacy",
+      "size": 8041,
+      "sha256": "88e70e643d1fee385bbec0998115c702a6c00df433a93ad2d3909626a950e03f"
+    },
+    {
+      "path": "assets/runtime/Settings.bundle/de.lproj/Root.strings",
+      "size": 784,
+      "sha256": "d618644b8ca76ea1462adc148d7e80f6b6ed689b2654d16da6d454661b874d26"
+    },
+    {
+      "path": "assets/runtime/Settings.bundle/en.lproj/Root.strings",
+      "size": 778,
+      "sha256": "6a560dc2ce9be7d53fce39aff4954e824a6bb959be5eeeb1936a73797be8a68a"
+    },
+    {
+      "path": "assets/runtime/Settings.bundle/es.lproj/Root.strings",
+      "size": 794,
+      "sha256": "da325436086acb8b6324517cfc56d50e1a451918c334bbe902e6527e09573abe"
+    },
+    {
+      "path": "assets/runtime/Settings.bundle/fr.lproj/Root.strings",
+      "size": 780,
+      "sha256": "234ef021280b98199dfe1e09cbd9a0c9e539773fbbca0255eb31bd37acf22892"
+    },
+    {
+      "path": "assets/runtime/Settings.bundle/it.lproj/Root.strings",
+      "size": 798,
+      "sha256": "f9b32b84c25fda2685735310b63c037deebc16687977e1fe991b9f57b5148958"
+    },
+    {
+      "path": "assets/runtime/WireproofIcon1024.png",
+      "size": 1112118,
+      "sha256": "c0e7006452cfbc3990916c0b60aebc37574f6213e70c70b40e6712e85b20cc94"
+    },
+    {
+      "path": "assets/runtime/WireproofIcon60x60@2x.png",
+      "size": 29586,
+      "sha256": "9489b6ea8a747a46f0c154a0cd32420dc06ab413ecc64fe2acf71183fee35598"
+    },
+    {
+      "path": "assets/runtime/WireproofIcon60x60@3x.png",
+      "size": 60142,
+      "sha256": "9f0bde481fd1d6277aa22fc3860b94a26a89918ceaa67515d37e45b8dd0242a4"
+    },
+    {
+      "path": "assets/runtime/WireproofIcon76x76.png",
+      "size": 13303,
+      "sha256": "f21326a76f89eb06a1be14e4087c0dd785507c6c8b7ad6f6b00c4ade9a9676a4"
+    },
+    {
+      "path": "assets/runtime/WireproofIcon76x76@2x.png",
+      "size": 44706,
+      "sha256": "1ef72e5bda2d4ea3029ebe29858c9531bba4b308bcee4304e3e2685d03725ae5"
+    },
+    {
+      "path": "assets/runtime/WireproofIcon83.5x83.5@2x.png",
+      "size": 52823,
+      "sha256": "0b1aa3a4cd86fab01d71a9f5b4bb5554362cae6edc266c199fe7d5ad704d1165"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-BoostUpgradeAnim_EmptySlot.png",
+      "size": 733,
+      "sha256": "53bc2c439820e914b6a87de801a1664c9e5dbcad5679888b723d562f7773a486"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-Check_On.png",
+      "size": 2338,
+      "sha256": "e5794b9ab91e31d8fca2500823f3444f6ac92f196643c95883b435289415b2d6"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-N_BoostBG.png",
+      "size": 14615,
+      "sha256": "d29892087c783540785438bc00ff203022d45878b297b0fc03d36039a3ea2424"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-N_Btn_General_Normal.png",
+      "size": 2562,
+      "sha256": "9bb04b0213fe0ca42a9e1899b72e5f3a335f8f14c42c5348fc79c75c1d303d65"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-N_Btn_General_Pressed.png",
+      "size": 5369,
+      "sha256": "97010dcc517b58ec0e24c72bbf35917544e31061b4d0f71ff3371bfdeb2427a4"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-N_GoldSeparator.png",
+      "size": 302,
+      "sha256": "67c613fe6f31e0122452c9cd44080be991b5f02cce716f2566395a2f77036cec"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-N_Home_Button_Normal.png",
+      "size": 5675,
+      "sha256": "8925887f172f29fa77ab685b185013fc8b4c1b8d7580f64fbc7c51b6719c3f7e"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-label.png",
+      "size": 10794,
+      "sha256": "2530285ca4ac262e184810ddb3fde07d59f39a8b03a5d831e45ef19f3c7ac915"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-00.png",
+      "size": 35382,
+      "sha256": "a4f64d5f002c15e09b31fa7708e6c7c139c122c53fbb2df6e7a106a205331cee"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-01.png",
+      "size": 34650,
+      "sha256": "2623e569ea38390d1fc875a684441c4ad8610f995da9d0ababd7bf64b1b2f1b5"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-02.png",
+      "size": 35398,
+      "sha256": "bbbf75355cd348d7e6e874b47ad0817cbd01f2f1e595e96878aebdd1681ee981"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-03.png",
+      "size": 34937,
+      "sha256": "a9011d5a4fa66b23f19d957ba4710acfe0ffe0087e7a0b00228d19401a3a235f"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-04.png",
+      "size": 34873,
+      "sha256": "d6390290a0fe6e6ef5c9bc51579966cfc4e5bf1af175aab695012e424dfa3066"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-05.png",
+      "size": 34188,
+      "sha256": "14745350940e2a7fbb78f2a9a5581b24244b4832b41229b8ace519d19f29c89f"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-06.png",
+      "size": 34428,
+      "sha256": "8e31de428fbf2702d6fc6c43d673afe115cdcaaff2de4154aa73d4459ccb194e"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-07.png",
+      "size": 34443,
+      "sha256": "c8169010e90c63d90441b35fdf5e73db4555fe11d496a65f579772ba9c72180e"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-08.png",
+      "size": 34746,
+      "sha256": "7b695b3dcf52a203b08e43924c61a22e207364d2e117117a9ce9ec1fee6f4b32"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-09.png",
+      "size": 34087,
+      "sha256": "907ab4868cfd58c71455cc0d92983110fd4cccc3f4244c775c1616778cec5f74"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-10.png",
+      "size": 33745,
+      "sha256": "a6ff3f14b3a6a2e0b5af1731fa64a37c8568c7724d2698086a1c9670dacac3ce"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-11.png",
+      "size": 34239,
+      "sha256": "1e8c3e74d03a86c950b7791569945e345ec2022d9c49cdc0a07b9a02c69758b3"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-12.png",
+      "size": 35042,
+      "sha256": "760f426de6dad9d76c10383b020f67552485bc3b4c4f96773b079a88e534ee33"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-13.png",
+      "size": 35255,
+      "sha256": "13b9dccf7ba6295d4f8c60fd3ec698f16d193529598160b32a8bce4e19857e2c"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-14.png",
+      "size": 35046,
+      "sha256": "db538c6388d13ad775e75054bc72032835a967707d13a7e710f028e770b2bc00"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-15.png",
+      "size": 34388,
+      "sha256": "b1a87d3b5bded065a21d18c8de76dbadfc99649393b2be8ea4f6b087953625e6"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-16.png",
+      "size": 34641,
+      "sha256": "b7d0d58a0c05261b72b3a026ea3bca8be13010aa69493b54cd5cce5daa6fd180"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-17.png",
+      "size": 34489,
+      "sha256": "bbc43001c9b0699b8c9921c2ec8eb7460aec34580d525a267f6c76a0e87e9202"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-18.png",
+      "size": 34749,
+      "sha256": "164630558014fef765d168140cff12a6c5b94765d1592e5b52719ac40187b5a0"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/blitz-orb-19.png",
+      "size": 34217,
+      "sha256": "99ef634e40b5046ae050614a989b526228301727ad667fa8daa0297fd88f17d9"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/detonator_2x.png",
+      "size": 53268,
+      "sha256": "168a198a8438d62ff461098ba65c84b7d1b5c15f30749f410e42810106005ef0"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/extratime_2x.png",
+      "size": 50849,
+      "sha256": "81fd2514e02001551238644de0944d76b26c36d042749c90ca171fc7e3647019"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/multiplier_2x.png",
+      "size": 57631,
+      "sha256": "896307312ee87a96649df32703813ac4402666a350a66a363aef2b508a405bfe"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/mystery_2x.png",
+      "size": 52432,
+      "sha256": "e799363f35f9bb05c61b35c22b9ea0086fb9bed0c992ee994c65733f74668229"
+    },
+    {
+      "path": "assets/runtime/WireproofUI/scrambler_2x.png",
+      "size": 54183,
+      "sha256": "78cf283a1a00fee1a63bb83b5b28a8889af27f6dcc5dc064e9d1721d666253ab"
+    },
+    {
+      "path": "assets/runtime/alert.caf",
+      "size": 26672,
+      "sha256": "17c825f38848bf73a47c5471f4b5e13b34a9c84a2036ab05bd5dbcfbe7102c0d"
+    },
+    {
+      "path": "assets/runtime/arrow_l@2x.png",
+      "size": 6241,
+      "sha256": "ce919b98af78a629489449deec70256bd38b2c8a5ca386561626145f9170b324"
+    },
+    {
+      "path": "assets/runtime/arrow_r@2x.png",
+      "size": 6085,
+      "sha256": "26e001e5b2c71780d1b92e937255ac79431d8988f33e0f7fe9b53d8d982f34d4"
+    },
+    {
+      "path": "assets/runtime/btn_OK@2x.png",
+      "size": 16420,
+      "sha256": "0b751d7a99327060b11d24b4ae88ca90a8331e5d10d147b65db99b5bfd87dbbf"
+    },
+    {
+      "path": "assets/runtime/btn_OK_lit@2x.png",
+      "size": 17447,
+      "sha256": "0e8eab610fdf5ea3283b16d825bcd01b4e2078573a1d86eea103c8af6663694e"
+    },
+    {
+      "path": "assets/runtime/close_dark@2x.png",
+      "size": 6560,
+      "sha256": "b621b101ab00b01b6c1ce73cf4cc9fbf8de0998ff96cd4f99b95971192f3e8ce"
+    },
+    {
+      "path": "assets/runtime/close_lit@2x.png",
+      "size": 6674,
+      "sha256": "06d2877c15551c4517f9ecec757f9c52e89faa4c2b542ffadac00ee0796a6c77"
+    },
+    {
+      "path": "assets/runtime/de.lproj/InfoPlist.strings",
+      "size": 706,
+      "sha256": "7e84bf81e5d8d6609ea1002164cf898587cd95198fa8bd2677d6cfe5f2e3927e"
+    },
+    {
+      "path": "assets/runtime/de.lproj/Localizable.strings",
+      "size": 164,
+      "sha256": "e6c31be80a5c2b7fdd61ed5a29bf116743dcab8cb68f83fdd140dd0e39c2f087"
+    },
+    {
+      "path": "assets/runtime/de.lproj/banner_01.png",
+      "size": 47935,
+      "sha256": "f3dda6b4e5376bf6eb878690f72a72cc2a33a6c3696d38ac7c6241688388810a"
+    },
+    {
+      "path": "assets/runtime/de.lproj/banner_02.png",
+      "size": 30738,
+      "sha256": "41212e08dbfcef66ac9c1024754e81ebd8672d7e28c53b610958a06440f2b49f"
+    },
+    {
+      "path": "assets/runtime/de.lproj/interstitial_01.png",
+      "size": 416379,
+      "sha256": "fc33e25038cbdf2761d5c6720e26d339412910028ba461e072a551d61da8cf53"
+    },
+    {
+      "path": "assets/runtime/de.lproj/interstitial_02.png",
+      "size": 163007,
+      "sha256": "ab0c7bf363a6ade906e82177129ae92ed1c2eac553ece712e9c1fc2db5d2bf44"
+    },
+    {
+      "path": "assets/runtime/en.lproj/InfoPlist.strings",
+      "size": 549,
+      "sha256": "d4a1f5e670a7283de910e1f00da89d2f27e44fe159a0c98f03304c9d1a5ef614"
+    },
+    {
+      "path": "assets/runtime/en.lproj/Localizable.strings",
+      "size": 158,
+      "sha256": "7a95a151a5b85203f33d0de6ec12b6b4d5cbbf21413f3423a2af10ab9c2a770e"
+    },
+    {
+      "path": "assets/runtime/en.lproj/banner_01.png",
+      "size": 48043,
+      "sha256": "2ee97a8c94807808c2528ce824c28dab4a7fc65c1aa223ee9f2012469834b380"
+    },
+    {
+      "path": "assets/runtime/en.lproj/banner_02.png",
+      "size": 31600,
+      "sha256": "1910885586bad9cd056ad955126d3995a5ff597068ddcd225855e13c6e7a695a"
+    },
+    {
+      "path": "assets/runtime/en.lproj/interstitial_01.png",
+      "size": 415762,
+      "sha256": "b39d1b1b8ed553c2d3f5386a08aeb3637adcec84fb6e6b51c27c0052dff5d3e4"
+    },
+    {
+      "path": "assets/runtime/en.lproj/interstitial_02.png",
+      "size": 158612,
+      "sha256": "c82ea5d252d49ad88eef89b0d5824390c4edccffbe810d127c431487553d427b"
+    },
+    {
+      "path": "assets/runtime/es.lproj/InfoPlist.strings",
+      "size": 642,
+      "sha256": "fb1bead050306a9750efdb4245883583cd466d32806179ee2cbf95ea4cceba69"
+    },
+    {
+      "path": "assets/runtime/es.lproj/Localizable.strings",
+      "size": 163,
+      "sha256": "36868e93728e7b9268e19f3c83fc95cfb94a8d62284ff9b1204332d22b979d79"
+    },
+    {
+      "path": "assets/runtime/es.lproj/banner_01.png",
+      "size": 46993,
+      "sha256": "f8e94c8c7c718b9eae947fd8ca73aafb90319c6ff136a79d8cafc349818e966b"
+    },
+    {
+      "path": "assets/runtime/es.lproj/banner_02.png",
+      "size": 31952,
+      "sha256": "f38a36d17e1932b0e2426e81c20d1dc16c6b8398db562f5c8174b4afd3b59fbb"
+    },
+    {
+      "path": "assets/runtime/es.lproj/interstitial_01.png",
+      "size": 415071,
+      "sha256": "0554f6f4c94dfa76a43517b91f1beba7ffd64335a6735cb98b46a11386d1b788"
+    },
+    {
+      "path": "assets/runtime/es.lproj/interstitial_02.png",
+      "size": 159827,
+      "sha256": "83927b2f99e0a312a1b184415b7e9dfbb8217823be467cd0bad3b972d635465b"
+    },
+    {
+      "path": "assets/runtime/fr.lproj/InfoPlist.strings",
+      "size": 734,
+      "sha256": "621bc24c2478f678ec20cdbe502a5a6532932c4fd5d1be686d718227905bb1a8"
+    },
+    {
+      "path": "assets/runtime/fr.lproj/Localizable.strings",
+      "size": 188,
+      "sha256": "d4f2b5523a8b21664a13cce010725ec746b0c6fac935b2240d0d7a736f0a38a1"
+    },
+    {
+      "path": "assets/runtime/fr.lproj/banner_01.png",
+      "size": 46709,
+      "sha256": "30db802e5d82300958ec3aee8227a9af90bd1355fc0689a9e8fc6e9cf241ba8d"
+    },
+    {
+      "path": "assets/runtime/fr.lproj/banner_02.png",
+      "size": 31270,
+      "sha256": "fba8e2d4aa11913e1b101ff690f174f7a766faaf1867d9bc8dce226ad192a3c0"
+    },
+    {
+      "path": "assets/runtime/fr.lproj/interstitial_01.png",
+      "size": 418589,
+      "sha256": "9d68d869feacc66dcdc9dd383a25ec8adc4451922725f5fa6642cb3029d1099a"
+    },
+    {
+      "path": "assets/runtime/fr.lproj/interstitial_02.png",
+      "size": 164924,
+      "sha256": "13a74a54bb2b98b9537d64f9ba3563985fec7e449bf488a7160959167a3f7d0f"
+    },
+    {
+      "path": "assets/runtime/frame@2x.png",
+      "size": 27088,
+      "sha256": "e903c5bc7096386e06df4bf6ae26b0ecbc5a2ab1b3734db6b98e047bf489e17f"
+    },
+    {
+      "path": "assets/runtime/gradient_overlay@2x.png",
+      "size": 2602,
+      "sha256": "e358e757be3febc1f5a47469953cb6e5c71f08c03c628661c3ed00e8155568e8"
+    },
+    {
+      "path": "assets/runtime/it.lproj/InfoPlist.strings",
+      "size": 702,
+      "sha256": "bad65b5375995567fa327b3d7053bb22e900cb082b43a61bff8f13964563abd4"
+    },
+    {
+      "path": "assets/runtime/it.lproj/Localizable.strings",
+      "size": 196,
+      "sha256": "8794beefb5659db9f56dfd7aeba506e34b62e3575f894a60d098dbb2323c807c"
+    },
+    {
+      "path": "assets/runtime/it.lproj/banner_01.png",
+      "size": 47743,
+      "sha256": "fd591fb14eee641145b6dec995663180fef632863840285d91ec3cf54ecd2c0b"
+    },
+    {
+      "path": "assets/runtime/it.lproj/banner_02.png",
+      "size": 31109,
+      "sha256": "96b47b746648971c5fc663823b5b87bfee44fc9b14a23438de5be4e4eb78fde7"
+    },
+    {
+      "path": "assets/runtime/it.lproj/interstitial_01.png",
+      "size": 415157,
+      "sha256": "c5a806e02446d718546df06d3f5d213ef214f9cefa7cb1b4026bdc1c82874c9b"
+    },
+    {
+      "path": "assets/runtime/it.lproj/interstitial_02.png",
+      "size": 162731,
+      "sha256": "754b500a9a0b71232bc1464ed95bc39b7f87c37b8b37aee126c7f5b0f0ae5911"
+    },
+    {
+      "path": "assets/runtime/main.rsb",
+      "size": 59281408,
+      "sha256": "2f89a0594ffb860e654b167e69aedddd342b24e669ada00f07d8b58f703ca3a4"
+    },
+    {
+      "path": "assets/runtime/music/Butterfly.caf",
+      "size": 1317556,
+      "sha256": "89a99d47a51a8122bb677a884bea1710de3f52c7ccb01391eb00898db9accd7c"
+    },
+    {
+      "path": "assets/runtime/music/Butterfly_lose.caf",
+      "size": 72555,
+      "sha256": "2ae86ce910897b8b46b1c9f13a8084f69fa14e051abf8232f33ab5f28487a010"
+    },
+    {
+      "path": "assets/runtime/music/Classic.caf",
+      "size": 1280192,
+      "sha256": "f16a4a88805cb422fa152347d4e45f2cd05751cdd2e716c6574773b840d784e0"
+    },
+    {
+      "path": "assets/runtime/music/Classic_lose.caf",
+      "size": 100216,
+      "sha256": "422959943c347ffc4be8038a380ed8f98d634e286bb3bdc9c7f9292c63fb9f70"
+    },
+    {
+      "path": "assets/runtime/music/Diamond_mine.caf",
+      "size": 1346189,
+      "sha256": "caf2ad48025058ab56afb6f6c96e574b0d33eb061cd91d6f9c8020450da99bed"
+    },
+    {
+      "path": "assets/runtime/music/Diamond_mine_lose.caf",
+      "size": 81532,
+      "sha256": "ed4e09fe2ba62ac99f9b73800519603e493f84cd82de1137bf88941652f1b185"
+    },
+    {
+      "path": "assets/runtime/music/IceStorm.caf",
+      "size": 1328123,
+      "sha256": "2a3f9a2ca02d2b37bbc2438d4408d73558d14cab9816fe80b79e05e661db3bdf"
+    },
+    {
+      "path": "assets/runtime/music/IceStorm_end.caf",
+      "size": 76172,
+      "sha256": "dabd8f995aa0852c5c273700a8741df222ceebc55960f23328b8644811ccd6dd"
+    },
+    {
+      "path": "assets/runtime/music/Lightning.caf",
+      "size": 940128,
+      "sha256": "2e25c955aa821755da343468a620c7023c89e64778e58360abd94251c49ce5e2"
+    },
+    {
+      "path": "assets/runtime/music/Lightning_end.caf",
+      "size": 81216,
+      "sha256": "7e2cb3d6cf28ed592b4f1c5a2954ed3bf2f121ac058b88ef453a607bcc9b699e"
+    },
+    {
+      "path": "assets/runtime/music/LoadingScreen.caf",
+      "size": 216293,
+      "sha256": "864506a86edfba382f05c65ecdb8c22993d3711dec871ffdf0f0490dcf96c080"
+    },
+    {
+      "path": "assets/runtime/music/MainMenu.caf",
+      "size": 767685,
+      "sha256": "67ed9699896c7a405ee99ec73d566dafb80f3d90735cff416c59b0096f9627de"
+    },
+    {
+      "path": "assets/runtime/music/Poker.caf",
+      "size": 1376538,
+      "sha256": "40482790e7b8b0324515f17c6f050d5b818e616c96c5ee2fb5cc0832c15377d1"
+    },
+    {
+      "path": "assets/runtime/music/Poker_end.caf",
+      "size": 41972,
+      "sha256": "563f1bd2dfe518180320fb28c6d9787e63a41d39ada32b58f45ae79074f96723"
+    },
+    {
+      "path": "assets/runtime/music/Zen.caf",
+      "size": 1237042,
+      "sha256": "32b4657baed243395594ae9f7954b10675a9d8b986f74cc12e629b87b735c06d"
+    },
+    {
+      "path": "assets/runtime/ribon.png",
+      "size": 3229,
+      "sha256": "74d86b53457a4dbacc327ec42b6b53254d13747157a5df7aa347d14766377a40"
+    },
+    {
+      "path": "assets/runtime/ribon@2x.png",
+      "size": 3985,
+      "sha256": "de0c060d1e304329e4cb2855c46b2d6662483a7f859914978f6818b9bf1e002f"
+    },
+    {
+      "path": "assets/source-materials/FlatBG_BridgeShroomCastle_960.png",
+      "size": 515057,
+      "sha256": "b17cf790fe04b6e7550fd2e6a41f3ca8e96b7131363197a9de88041731279e90"
+    },
+    {
+      "path": "assets/source-materials/FlatBG_BridgeShroomCastle_Common.png",
+      "size": 647712,
+      "sha256": "70ba8c7e6280a830a5c3ff6e34ecdb9a55332c92571885b34fbc464cf6a176a1"
+    },
+    {
+      "path": "assets/source-materials/desktop-gems-preview.png",
+      "size": 101189,
+      "sha256": "b8a6a1102c5225bce11fd7e6df0ba7192015dbdf8fcf1653fee0069a2ad0695b"
+    },
+    {
+      "path": "assets/source-materials/ios-gameplay-960-atlas.png",
+      "size": 1257130,
+      "sha256": "38ab7c29b70b5c10d39dacf04fe1c7e4094f0af6111e42ae59b47068652541ea"
+    },
+    {
+      "path": "assets/source-materials/ios-gameplay-960-rgba4444-candidate.png",
+      "size": 1273428,
+      "sha256": "7760deba038363e8aa1510fac1dec2581767e84267adbe1abea0de9266f57e38"
+    },
+    {
+      "path": "assets/source-materials/ios-gameplay-960-tiled32-candidate.png",
+      "size": 1257130,
+      "sha256": "38ab7c29b70b5c10d39dacf04fe1c7e4094f0af6111e42ae59b47068652541ea"
+    },
+    {
+      "path": "assets/source-materials/ios-gameplay-960.raw",
+      "size": 8388608,
+      "sha256": "cf61f93a5187984741f7f96e09a0a21844f89ee394b185d40027076a3a34df6e"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-blue-strip.png",
+      "size": 33523,
+      "sha256": "1a50d2df4ad2726857b24e4dc0c6fa945150cd6df5aafa95467b945cb1b8da88"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-green-strip.png",
+      "size": 36315,
+      "sha256": "3dc0d5dcdc4830a7c82489b5866e13d1a3eba64a2c2720ecfc77bf43cf5b2323"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-orange-strip.png",
+      "size": 38751,
+      "sha256": "45f02b52b8e51a62cf83dabf7a571d78598461ec5688c309087c3364450fb1eb"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-purple-strip.png",
+      "size": 26662,
+      "sha256": "a1ed4f525c473e9e491a931a684ffbfee0614c2d9762d79c904dea4447bce498"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-red-strip.png",
+      "size": 32094,
+      "sha256": "7bcfe905a672cf8cb3807a202d273569cf611c1421861e53005a0bff236cd486"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-white-strip.png",
+      "size": 36179,
+      "sha256": "feee397ba5b826b9321d775851e3ad16a337906a78f6b4761b206363743364a5"
+    },
+    {
+      "path": "assets/source-materials/ios-gem-yellow-strip.png",
+      "size": 27500,
+      "sha256": "2438e93092a520909b44383f9f7af1732b13ffc8b5a9eaf5e38e814cb8209a7c"
+    },
+    {
+      "path": "assets/source-materials/ios-main.rsb",
+      "size": 57856000,
+      "sha256": "b64771c0efbb436c8693cee2162c7268abc645726cd709d42fef473ffaf25061"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/Blue.png",
+      "size": 98950,
+      "sha256": "02f8e6599492c06ca66a845ae82091a5eff0e796b9dd2ce49904326dc1a20c72"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/Green.png",
+      "size": 91773,
+      "sha256": "818482bf2e6d6c852e17c29e601bcffc595d4d34a02d60139107f5c8a95a0c74"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/Orange.png",
+      "size": 110142,
+      "sha256": "02eca4bdcdc9e0599ae8c3ec66fa0d9296c20da7c1754cbab5ac974dba1ab300"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/Purple.png",
+      "size": 74073,
+      "sha256": "8d25816820b9cc4c2f8527c23f42fa2e7054c0349c6fc5a20527c726968812c9"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/Red.png",
+      "size": 62845,
+      "sha256": "14c3856d2a70187165069562d2d70562a0d51b0b9aa5fd443abbdcd540ddfca8"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/White.png",
+      "size": 193345,
+      "sha256": "273a0cf98236bd92a7541107548ffe3e981f397a6b93c5fa4a528588c3cf44bd"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsNormal/Yellow.png",
+      "size": 83945,
+      "sha256": "a2656892f248a669bfce4eede978e9e2841b5e8d637e9a6476daae6822e6b0c8"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/Blue.png",
+      "size": 51920,
+      "sha256": "44392582bfa2017646035f76089555d4b7ef1336f3f6dfa784d640c10ffcc431"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/Green.png",
+      "size": 56359,
+      "sha256": "4ee65e26042fdd027012e5d691d90c205458615cb4decc6d5397daafeb1d7240"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/Orange.png",
+      "size": 58030,
+      "sha256": "5a7e4a29708c00a1ac7599516a93dcaeb9219ee811a3a77e095986f94d55b530"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/Purple.png",
+      "size": 52442,
+      "sha256": "787cfed481c8faea5177df7e3a84504e4a21daf804d509d6ee4f54a2ba688c64"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/Red.png",
+      "size": 40550,
+      "sha256": "cd4349a267fe978dc15c14f3e64e2942503be2a2aed66872dc21464aac665a50"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/White.png",
+      "size": 58997,
+      "sha256": "050bbdb042a2e2c89e79347902c2f80e635fc8cac72e998a68ceef0f8ce78cba"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/GemsShadow/Yellow.png",
+      "size": 50011,
+      "sha256": "25920d8a72fb154a1269c9ccf136141cb64956a7aa68b76a57a49899a3117c9c"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/help/flamegem_help/0_flame63.jpg",
+      "size": 53650,
+      "sha256": "fbba1e0a77c42ca802180607473146735da1f558d7ed8d29a674b96499bbf1f4"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/help/flamegem_help/1_help_green_noshdw.jpg",
+      "size": 6357,
+      "sha256": "3f215ca569a2225b77082ff82b901a607ea839d365a6ebfda0c7052d2b09ac2a"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/help/hypergem/hypergem_154x384.jpg",
+      "size": 7876,
+      "sha256": "efce273ee78d95695c8c72e4b1d706778be909633f284a0f9716371a3dc175e1"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/help/hypergem/hypergem_160x160.jpg",
+      "size": 7277,
+      "sha256": "fce5b93ec6a6a3fa527342bb30a0f8ad3a8fdb8fe7e373cf6a1d27a971412a79"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/1200/help/hypergem_help/0_hypercube0001.jpg",
+      "size": 257212,
+      "sha256": "5f722a928872bee6269c6771062b93bc845f3fd7e16fa7cf84a958e43e7836f7"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/Blue.png",
+      "size": 48266,
+      "sha256": "f964753b5a68e4fc528771c84e71ef30893f369aa9dd9612c7e1c1bc81ba49f9"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/Green.png",
+      "size": 40287,
+      "sha256": "45879eedaa963f089e080c5acee1b09db4382c607951a9dbc926e8fe19b9fc0e"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/Orange.png",
+      "size": 51812,
+      "sha256": "d806a67a03f8e23c62049cecf2b55e82533107c235f57820e3b20e60cd293e27"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/Purple.png",
+      "size": 35181,
+      "sha256": "94e41b151ac2f40c587f9c91f5258fd3ef6658053147a66b8600ef73c1238b94"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/Red.png",
+      "size": 29220,
+      "sha256": "a4a50c2017716aef87042a62d1e154ca5275c351be019ce71146c085a5605c2a"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/White.png",
+      "size": 71553,
+      "sha256": "0b2a8f2d07d7c4d876d3ecfedf52bf671f76045d89f1b057f7902b5b699b503b"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsNormal/Yellow.png",
+      "size": 40824,
+      "sha256": "530b5479f205d5a34a002b2fc0d24cbfc572fb3e9e81f1626571be93ee1b73c4"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/Blue.png",
+      "size": 22480,
+      "sha256": "eff78ceff7f4b1cfd59ed21b202c2aed1ccd14496fb5048a8021047983198bbc"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/Green.png",
+      "size": 24384,
+      "sha256": "f6a5e6af840ec945ea14db278affbc45d5eda06906fdd4fefc27c27feb3b990c"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/Orange.png",
+      "size": 24299,
+      "sha256": "2ba5e4afc0aff9723ac251eb170ad6a6682e2abebc7ba9876f81da9f441e3a78"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/Purple.png",
+      "size": 21496,
+      "sha256": "4d0d2286cd5dbba5748dc10928fd7ea61d1e9cb6d53e0274a51187f1444cfe79"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/Red.png",
+      "size": 17619,
+      "sha256": "578a142bcbe03320cda4ccf436a711b39e34837c85f7e88648f94daa47cc58c1"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/White.png",
+      "size": 24758,
+      "sha256": "3a190254ecbc5558fc722b5c89367aa93adee919fc5a3052ab57b41bd3601b38"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/GemsShadow/Yellow.png",
+      "size": 21425,
+      "sha256": "c4a5292b2b05beb2712a3d639545c00912d8c50a323f88a8bda7eaa920ea3aea"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/help/flamegem_help/0_flame63.jpg",
+      "size": 23979,
+      "sha256": "3c99f46ca7e3f6aa05a4ebc03a6f3f8b257ebeb8536e4fc8d0759d915fca03dd"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/help/flamegem_help/1_help_green_noshdw.jpg",
+      "size": 3045,
+      "sha256": "54b9b56a4103575f5d3488b792b41bd8528cf28f48f91b06175bf50ff7f604ba"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/help/hypergem/hypergem_154x384.jpg",
+      "size": 2852,
+      "sha256": "3f3a5ad1387aed65305ddc492c473a38450d93cf1fbd9b5e5eae3d89371aab27"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/help/hypergem/hypergem_160x160.jpg",
+      "size": 3251,
+      "sha256": "a621d95ce60f64832bda06ed3d1a634cd539b0b2fa7341e017405a412c1d6271"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/600/help/hypergem_help/0_hypercube0001.jpg",
+      "size": 95683,
+      "sha256": "6f158734faf5970dacb5a8aa46050b2a18d1d31477004c619a86b6a4f76fd791"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/Blue.png",
+      "size": 81834,
+      "sha256": "553b0700173cf37e03a50b6a56016870bfc6b8637ae95e5b3439b122c99e82cc"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/Green.png",
+      "size": 65477,
+      "sha256": "bd6e292d7f9d597088561d736f75e9daed11987716ef1a7f8c8ba18d0d241163"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/Orange.png",
+      "size": 84867,
+      "sha256": "040e07ebf6a3134e17424720c3c2705ff84517b671c45e8975ddd340a510b5c5"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/Purple.png",
+      "size": 63440,
+      "sha256": "91884962e0b00f204744d0de7a33cd792239c839df4be9115927f2db4703f956"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/Red.png",
+      "size": 50231,
+      "sha256": "3e011e061d854d6895e1abf5b94d7540f527d3d7b5362f359803109279fde8d4"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/White.png",
+      "size": 109361,
+      "sha256": "9d3f33812cee1f2d200296825a16f6106c06af2bfd265630aa2c6fc59a4380ec"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsNormal/Yellow.png",
+      "size": 74205,
+      "sha256": "858c60719b8aff9f1557e2ae59774a831df38cfb1157ee3429a7ffc753fc45ee"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/Blue.png",
+      "size": 38675,
+      "sha256": "f6bd3236f2409b1e7ee35cfa89d5116768d723393899d921f08d8ddbcc5f32bc"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/Green.png",
+      "size": 36657,
+      "sha256": "7461a2698466c135e9886bce8f5f396ef614b64ffc214136b53a9c6fcf6fb91b"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/Orange.png",
+      "size": 36740,
+      "sha256": "42902cd4e7606827ff2c2bacfcfb0c8fa4d998eb36fd4fb1c49c7b81b134378b"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/Purple.png",
+      "size": 33675,
+      "sha256": "e2d2c63a6d14c5ba374f9f5a143db77965071a82481d2da296aeb634e11ba71f"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/Red.png",
+      "size": 26560,
+      "sha256": "6a0c5d52aa4adbef9c38bf9e58dcedf27c77071463476f04a4774402072873fb"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/White.png",
+      "size": 36587,
+      "sha256": "42c17d2157539481bf7ad0cfe04b72b932c56881c0a191c89d1d0e778ae77504"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/GemsShadow/Yellow.png",
+      "size": 34056,
+      "sha256": "89c88d9aa887df7a2273ce5899cbe8cdcf8f744137d2633074af33dcf1c8f565"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/help/flamegem_help/0_flame63.jpg",
+      "size": 30329,
+      "sha256": "b54ca11be459b788be6b7b187faedde34ef89c1b37379b3e025d51ab2a39f64f"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/help/flamegem_help/1_help_green_noshdw.jpg",
+      "size": 4021,
+      "sha256": "561b0ef3367a9ce41f87139e3acef74d7ac39914222d61a4ae5330ef242891c5"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/help/hypergem/hypergem_154x384.jpg",
+      "size": 3965,
+      "sha256": "efbb3118291d15b761d60084a098291a60aa95a9dd7052986ef51dc3bd1404a0"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/help/hypergem/hypergem_160x160.jpg",
+      "size": 4079,
+      "sha256": "b414bed0845451b78055a38a9b663e349702e3095d566368638747956da06373"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/images/768/help/hypergem_help/0_hypercube0001.jpg",
+      "size": 128632,
+      "sha256": "46d3faa0597777a4ccd1d52b6be50bace8b55bc3e54da255a5c9c59684f78df4"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/gem_countdown_destroyed.ogg",
+      "size": 38090,
+      "sha256": "8dbccb7da4a6eb074ed950588985edb9ec31ee0c644309844b2e3a44267f04f9"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/gem_hit.ogg",
+      "size": 9267,
+      "sha256": "6a6edd75da2493a915ee0751e9617212c4ac9cb15359e1e6da9ad84a6da973cd"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/gem_shatters.ogg",
+      "size": 35514,
+      "sha256": "6c38c614ac774f591af15b2428e37836d91b61df9435c9a7a9a321e19f9d874b"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_1.ogg",
+      "size": 10684,
+      "sha256": "9610acda8ce841b9663fe57d5a4af6dea193f353e0c3b09261bcf0f869d5c477"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_2.ogg",
+      "size": 10358,
+      "sha256": "831fd83bf82d2b33074d815fcb18d5aba7cb9e9c0e8fffdfe7d3e2d52218158d"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_3.ogg",
+      "size": 10469,
+      "sha256": "753703a98d85211c6b40e941c61a54f340518406b1b8f237a65928547ad3f599"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_4.ogg",
+      "size": 10099,
+      "sha256": "5f33023011ee7d781d84bc181abf34a2ba62bb793f2cdc5b75aa90485c1d646e"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_5.ogg",
+      "size": 9807,
+      "sha256": "2f324c3ea89c444fc9dc81fc0da64e00c85555c6266a2567313a941bd5f466e8"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_6.ogg",
+      "size": 9576,
+      "sha256": "938b7ca9bcfeaf05387c6804566775e0fca95d0ec07074f507f4bf5daebd165d"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_7.ogg",
+      "size": 9315,
+      "sha256": "93fdeff61b929a65af15d2ee13f73651b2de82f52eccc88cb466151148d5a94a"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_1.ogg",
+      "size": 25098,
+      "sha256": "0332ceb2a659758150f6cb83edcec667b274a0f1323b6a51c315cab56268a3e6"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_2.ogg",
+      "size": 25281,
+      "sha256": "9dabf4cd07dc13b7d2a7dd3a967faaad33b33a227bd8db2e95bdad81cc4a0779"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_3.ogg",
+      "size": 24401,
+      "sha256": "740bc91e70f316d089be292e72bc1c490f198748699bba067b316a9ff460f1b3"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_4.ogg",
+      "size": 23634,
+      "sha256": "e6a78ec5154f81377133472005c8bb3338c58891c9213e84119395d1b7186ed5"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_5.ogg",
+      "size": 22923,
+      "sha256": "fd4b4968b98b7ad8ea05f9c61ddc65ddd4015e1f0a47a73623c8d81c31665588"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_6.ogg",
+      "size": 22372,
+      "sha256": "a30dba76b5e8b4f018bff2692fad6cf4c0f62a1cb02b93e41096c10a951a6b8b"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_gem_land_zen_7.ogg",
+      "size": 21575,
+      "sha256": "d6878ab8a1e7a09bc371956b38d1fbb90b1c94f375b946298de1e16530c22e98"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/hyperspace_shatter_zen.ogg",
+      "size": 56329,
+      "sha256": "0951c37a0507ec8c68940ae5fe44d60ba979318901b746da06bc8b1130dee876"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/lasergem_created.ogg",
+      "size": 33119,
+      "sha256": "c7a6a2b0071913d223f672049810be9ec49f0ee7968069dcfa1d049cf3f31d7d"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/powergem_created.ogg",
+      "size": 48857,
+      "sha256": "d297b1dcce0fbd86d70b247e187d4a12d985a458dda2ea73900d9b1a584998ba"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_checkoff.ogg",
+      "size": 6157,
+      "sha256": "f497a458f16ad320a2d723a8f077056f3f247c7fe857c9d9fbd4fe68928880e8"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_checkon.ogg",
+      "size": 5623,
+      "sha256": "5adc0e096c519871eec5bf292d2f0c61e8c5330af9e8bf1b833da99b128d9305"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_combo_2.ogg",
+      "size": 18348,
+      "sha256": "ddc3e5d7f23e5a3d0738dca5a4bbfb76309d0d3bd23b2ebe703bbf1393d2961d"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_dropdownbutton.ogg",
+      "size": 7775,
+      "sha256": "c6c5b2a18b58cbecc28351c862a25ae851f375ad9c0d4c33ce9e4f709f538050"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_mantra1.ogg",
+      "size": 42128,
+      "sha256": "ffcad102297c4a80228f44a120b0d482d802f01e37f73bae4280a02851f0f9af"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_menuclose.ogg",
+      "size": 22783,
+      "sha256": "89cf52eb2f498a13c34013897a2a4eee2926a3221000085625b189456583345b"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_menuexpand.ogg",
+      "size": 16384,
+      "sha256": "d65ce6edaa271c517ea8a66aa530bf9db5897edd29582077b5e199d2a78f7a9e"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_menuopen.ogg",
+      "size": 25862,
+      "sha256": "3d4661878513758bd58e185059d6001bc15f26a3d42d302e60fde3f011e255b3"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_menushrink.ogg",
+      "size": 11565,
+      "sha256": "7fad986e17a17ef08ed1052f14203c364566cbf3dc465779dfb94e65e3649b35"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_necklace_1.ogg",
+      "size": 41769,
+      "sha256": "0243a8d91bb9a62a1d339d489825a9ab283ad71343a146acddf4a0062d829c98"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_necklace_2.ogg",
+      "size": 88050,
+      "sha256": "fbc8f006f284c5c8c0bf5add1aada89454a86c96230434f38e11d96a81f492ff"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_necklace_3.ogg",
+      "size": 82314,
+      "sha256": "0a97bf11e69fdcf1527ee8f3b08d7851e04ee7a0a7edc902366d6586272ec7c0"
+    },
+    {
+      "path": "assets/source-materials/mac-extracted/sounds/zen_necklace_4.ogg",
+      "size": 98100,
+      "sha256": "06811f3a381c8ee97277aa8fa9fea532ff93d5bd300c05d5db5b21fc60485fd7"
+    },
+    {
+      "path": "assets/source-materials/portable-png/background-bridge-shroom.png",
+      "size": 2496354,
+      "sha256": "9c6fc732c766d8d3575ad401ad1ca2cb399568b1b1dc5e07352c6bcfce509b1e"
+    },
+    {
+      "path": "assets/source-materials/portable-png/bottom-frame-back.png",
+      "size": 2585,
+      "sha256": "f78d38d9ed0847f5dcf063412839f933cc58a334ccc50ba4772156476e1468d8"
+    },
+    {
+      "path": "assets/source-materials/portable-png/bottom-frame.png",
+      "size": 60839,
+      "sha256": "f86ba4a3b44117a62dda3f725d53d8b4d3347b30afc6ef1f9bec59d550b5cd70"
+    },
+    {
+      "path": "assets/source-materials/portable-png/checkerboard.png",
+      "size": 128566,
+      "sha256": "324e3761693756ef730ba6aecfc2d171e593e19b4f698d2e7bfa71c0a3d4e42a"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-blue-frame0.png",
+      "size": 15139,
+      "sha256": "e440cc022827babb516eb4aea8ce7fab53651ff770fab568676b67d015ae382e"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-blue.png",
+      "size": 286859,
+      "sha256": "1ab849641aa3132e8a9bc5f209c3f20d11826f97428eab2cc1315f5524cc65ca"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-green-frame0.png",
+      "size": 15952,
+      "sha256": "7d2d193faeff78e8bbf5bea78907aa992c711634360ecc96cdb8e25ab8451838"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-green.png",
+      "size": 290418,
+      "sha256": "3f905e21a7a4ae15184ea3dd98d01488187f7a68dd29de7cb1ac60624451b8d3"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-orange-frame0.png",
+      "size": 16947,
+      "sha256": "89e7f4e776830bd9489e0e017e1780381809ea9d0ba930b689df455c06578524"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-orange.png",
+      "size": 328094,
+      "sha256": "9ac722b71ea2ad01f050f0cdc1838ea5dfd74a34cfc25647aa58da0c1fb89f45"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-purple-frame0.png",
+      "size": 10847,
+      "sha256": "2092f378130f0aa53288bd94c7daa10e934b9dabc701d2e07fbebdaa7edc5e3f"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-purple.png",
+      "size": 174763,
+      "sha256": "dc7af63fbec0e599fee8d55113fe606bf9e9b5be9d39a6e8dd6f266110197515"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-red-frame0.png",
+      "size": 12239,
+      "sha256": "14dff11f7607fea14f2713628613f27a7f7213498a81a384916ca4e5453379f1"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-red.png",
+      "size": 249128,
+      "sha256": "5a31c3565451e1e1d344ee9eaebb12f9c81ad460108b46c48b40eb7404832c2a"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-white-frame0.png",
+      "size": 8732,
+      "sha256": "f05f1f3c6149a46d96ee6b0863f7f0c3386b84c06edcb799c9e88cc17b9c8aa5"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-white.png",
+      "size": 161374,
+      "sha256": "0dc9d921a7144426f7b0cb36df4f5d62541443d5871d6cd1b345fcf60030873a"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-yellow-frame0.png",
+      "size": 15872,
+      "sha256": "74435cc636b81b9d73c8226781ba4f0f4fa4718cfe345551a7d86754f5c31cd8"
+    },
+    {
+      "path": "assets/source-materials/portable-png/gem-yellow.png",
+      "size": 250587,
+      "sha256": "0c86369365e37726fb826b04ead61bd8aab53b89c8e49c4143b68c7746c74b50"
+    },
+    {
+      "path": "assets/source-materials/portable-png/top-frame.png",
+      "size": 45315,
+      "sha256": "d39c5456fe4aedecfd9b03186510bc0ab7060fd85779dad3269797007b339a77"
+    },
+    {
+      "path": "assets/source-materials/precision-patch/atlas-after.png",
+      "size": 1372678,
+      "sha256": "a079c33c3b1ddb38ece4674a616639117e428031445a2feb5d33f9355c7e918e"
+    },
+    {
+      "path": "assets/source-materials/precision-patch/atlas-before.png",
+      "size": 1257130,
+      "sha256": "38ab7c29b70b5c10d39dacf04fe1c7e4094f0af6111e42ae59b47068652541ea"
+    },
+    {
+      "path": "assets/source-materials/precision-patch/changed-pixels-mask.png",
+      "size": 12613,
+      "sha256": "3acbd179d754eb40d766ea24d036b51dcf48e02024cefe619916251c31b7df84"
+    },
+    {
+      "path": "assets/source-materials/precision-patch/five-color-before-after.png",
+      "size": 382929,
+      "sha256": "7cf224641f1cf2e6cc237397f744bf2ae8705f93bda605460fcdacce5d852091"
+    },
+    {
+      "path": "assets/source-materials/precision-patch/main-five-color-bgra8888-test.rsb",
+      "size": 59162624,
+      "sha256": "fe2505a00e49fc16d249e578c937aabc1df20c4140154fb14429436ec1fcfb70"
+    },
+    {
+      "path": "assets/source-materials/red-frame-comparison.png",
+      "size": 127595,
+      "sha256": "5c87650847d32a82aec1bf9cac88ce94e2e9c7af6c199a97889d5e32b9bbead4"
+    },
+    {
+      "path": "integration/ui-assets/blitz-BoostUpgradeAnim_EmptySlot.png",
+      "size": 733,
+      "sha256": "53bc2c439820e914b6a87de801a1664c9e5dbcad5679888b723d562f7773a486"
+    },
+    {
+      "path": "integration/ui-assets/blitz-Check_On.png",
+      "size": 2338,
+      "sha256": "e5794b9ab91e31d8fca2500823f3444f6ac92f196643c95883b435289415b2d6"
+    },
+    {
+      "path": "integration/ui-assets/blitz-N_BoostBG.png",
+      "size": 14615,
+      "sha256": "d29892087c783540785438bc00ff203022d45878b297b0fc03d36039a3ea2424"
+    },
+    {
+      "path": "integration/ui-assets/blitz-N_Btn_General_Normal.png",
+      "size": 2562,
+      "sha256": "9bb04b0213fe0ca42a9e1899b72e5f3a335f8f14c42c5348fc79c75c1d303d65"
+    },
+    {
+      "path": "integration/ui-assets/blitz-N_Btn_General_Pressed.png",
+      "size": 5369,
+      "sha256": "97010dcc517b58ec0e24c72bbf35917544e31061b4d0f71ff3371bfdeb2427a4"
+    },
+    {
+      "path": "integration/ui-assets/blitz-N_GoldSeparator.png",
+      "size": 302,
+      "sha256": "67c613fe6f31e0122452c9cd44080be991b5f02cce716f2566395a2f77036cec"
+    },
+    {
+      "path": "integration/ui-assets/blitz-N_Home_Button_Normal.png",
+      "size": 5675,
+      "sha256": "8925887f172f29fa77ab685b185013fc8b4c1b8d7580f64fbc7c51b6719c3f7e"
+    },
+    {
+      "path": "integration/ui-assets/blitz-label.png",
+      "size": 10794,
+      "sha256": "2530285ca4ac262e184810ddb3fde07d59f39a8b03a5d831e45ef19f3c7ac915"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-00.png",
+      "size": 35382,
+      "sha256": "a4f64d5f002c15e09b31fa7708e6c7c139c122c53fbb2df6e7a106a205331cee"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-01.png",
+      "size": 34650,
+      "sha256": "2623e569ea38390d1fc875a684441c4ad8610f995da9d0ababd7bf64b1b2f1b5"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-02.png",
+      "size": 35398,
+      "sha256": "bbbf75355cd348d7e6e874b47ad0817cbd01f2f1e595e96878aebdd1681ee981"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-03.png",
+      "size": 34937,
+      "sha256": "a9011d5a4fa66b23f19d957ba4710acfe0ffe0087e7a0b00228d19401a3a235f"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-04.png",
+      "size": 34873,
+      "sha256": "d6390290a0fe6e6ef5c9bc51579966cfc4e5bf1af175aab695012e424dfa3066"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-05.png",
+      "size": 34188,
+      "sha256": "14745350940e2a7fbb78f2a9a5581b24244b4832b41229b8ace519d19f29c89f"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-06.png",
+      "size": 34428,
+      "sha256": "8e31de428fbf2702d6fc6c43d673afe115cdcaaff2de4154aa73d4459ccb194e"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-07.png",
+      "size": 34443,
+      "sha256": "c8169010e90c63d90441b35fdf5e73db4555fe11d496a65f579772ba9c72180e"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-08.png",
+      "size": 34746,
+      "sha256": "7b695b3dcf52a203b08e43924c61a22e207364d2e117117a9ce9ec1fee6f4b32"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-09.png",
+      "size": 34087,
+      "sha256": "907ab4868cfd58c71455cc0d92983110fd4cccc3f4244c775c1616778cec5f74"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-10.png",
+      "size": 33745,
+      "sha256": "a6ff3f14b3a6a2e0b5af1731fa64a37c8568c7724d2698086a1c9670dacac3ce"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-11.png",
+      "size": 34239,
+      "sha256": "1e8c3e74d03a86c950b7791569945e345ec2022d9c49cdc0a07b9a02c69758b3"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-12.png",
+      "size": 35042,
+      "sha256": "760f426de6dad9d76c10383b020f67552485bc3b4c4f96773b079a88e534ee33"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-13.png",
+      "size": 35255,
+      "sha256": "13b9dccf7ba6295d4f8c60fd3ec698f16d193529598160b32a8bce4e19857e2c"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-14.png",
+      "size": 35046,
+      "sha256": "db538c6388d13ad775e75054bc72032835a967707d13a7e710f028e770b2bc00"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-15.png",
+      "size": 34388,
+      "sha256": "b1a87d3b5bded065a21d18c8de76dbadfc99649393b2be8ea4f6b087953625e6"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-16.png",
+      "size": 34641,
+      "sha256": "b7d0d58a0c05261b72b3a026ea3bca8be13010aa69493b54cd5cce5daa6fd180"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-17.png",
+      "size": 34489,
+      "sha256": "bbc43001c9b0699b8c9921c2ec8eb7460aec34580d525a267f6c76a0e87e9202"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-18.png",
+      "size": 34749,
+      "sha256": "164630558014fef765d168140cff12a6c5b94765d1592e5b52719ac40187b5a0"
+    },
+    {
+      "path": "integration/ui-assets/blitz-orb-19.png",
+      "size": 34217,
+      "sha256": "99ef634e40b5046ae050614a989b526228301727ad667fa8daa0297fd88f17d9"
+    },
+    {
+      "path": "integration/ui-assets/detonator_2x.png",
+      "size": 53268,
+      "sha256": "168a198a8438d62ff461098ba65c84b7d1b5c15f30749f410e42810106005ef0"
+    },
+    {
+      "path": "integration/ui-assets/extratime_2x.png",
+      "size": 50849,
+      "sha256": "81fd2514e02001551238644de0944d76b26c36d042749c90ca171fc7e3647019"
+    },
+    {
+      "path": "integration/ui-assets/multiplier_2x.png",
+      "size": 57631,
+      "sha256": "896307312ee87a96649df32703813ac4402666a350a66a363aef2b508a405bfe"
+    },
+    {
+      "path": "integration/ui-assets/mystery_2x.png",
+      "size": 52432,
+      "sha256": "e799363f35f9bb05c61b35c22b9ea0086fb9bed0c992ee994c65733f74668229"
+    },
+    {
+      "path": "integration/ui-assets/scrambler_2x.png",
+      "size": 54183,
+      "sha256": "78cf283a1a00fee1a63bb83b5b28a8889af27f6dcc5dc064e9d1721d666253ab"
+    },
+    {
+      "path": "integration/app-icon/WireproofIcon1024.png",
+      "size": 1112118,
+      "sha256": "c0e7006452cfbc3990916c0b60aebc37574f6213e70c70b40e6712e85b20cc94"
+    },
+    {
+      "path": "integration/app-icon/WireproofIcon60x60@2x.png",
+      "size": 29586,
+      "sha256": "9489b6ea8a747a46f0c154a0cd32420dc06ab413ecc64fe2acf71183fee35598"
+    },
+    {
+      "path": "integration/app-icon/WireproofIcon60x60@3x.png",
+      "size": 60142,
+      "sha256": "9f0bde481fd1d6277aa22fc3860b94a26a89918ceaa67515d37e45b8dd0242a4"
+    },
+    {
+      "path": "integration/app-icon/WireproofIcon76x76.png",
+      "size": 13303,
+      "sha256": "f21326a76f89eb06a1be14e4087c0dd785507c6c8b7ad6f6b00c4ade9a9676a4"
+    },
+    {
+      "path": "integration/app-icon/WireproofIcon76x76@2x.png",
+      "size": 44706,
+      "sha256": "1ef72e5bda2d4ea3029ebe29858c9531bba4b308bcee4304e3e2685d03725ae5"
+    },
+    {
+      "path": "integration/app-icon/WireproofIcon83.5x83.5@2x.png",
+      "size": 52823,
+      "sha256": "0b1aa3a4cd86fab01d71a9f5b4bb5554362cae6edc266c199fe7d5ad704d1165"
+    },
+    {
+      "path": "integration/app-icon/source.jpg",
+      "size": 117361,
+      "sha256": "dc4d6009eebcffcffa43bd28af71e2787a5fd9929d3adfe753a3462a9889b797"
+    }
+  ]
+}
