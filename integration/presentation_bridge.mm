@@ -23,14 +23,14 @@ void note(UIView *view) {
  NSString *path=[dir stringByAppendingPathComponent:@"Bejeweled-Presentation.log"];
  if(![NSFileManager.defaultManager fileExistsAtPath:path])[NSFileManager.defaultManager createFileAtPath:path contents:nil attributes:nil];
  NSFileHandle *f=[NSFileHandle fileHandleForWritingAtPath:path];
- @try{[f seekToEndOfFile];[f writeData:[[NSString stringWithFormat:@"0.0.32 %.3f %@\n",NSDate.date.timeIntervalSince1970,geometry] dataUsingEncoding:NSUTF8StringEncoding]];[f closeFile];}@catch(NSException *e){(void)e;}
+ @try{[f seekToEndOfFile];[f writeData:[[NSString stringWithFormat:@"0.0.33 %.3f %@\n",NSDate.date.timeIntervalSince1970,geometry] dataUsingEncoding:NSUTF8StringEncoding]];[f closeFile];}@catch(NSException *e){(void)e;}
 }
 void fit(UIView *view) {
  if(fitting||!NSThread.isMainThread)return;
  fitting=true;lastGameView=view;
  [CATransaction begin];[CATransaction setDisableActions:YES];
  view.autoresizingMask=UIViewAutoresizingNone;
- const CGFloat logicalHeight=UIDevice.currentDevice.userInterfaceIdiom==UIUserInterfaceIdiomPad?568:480;
+ const CGFloat logicalHeight=480;
  CGRect logical=CGRectMake(0,0,320,logicalHeight);
  if(!CGRectEqualToRect(view.bounds,logical))view.bounds=logical;
  if(view.contentScaleFactor!=2)view.contentScaleFactor=2;

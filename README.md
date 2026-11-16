@@ -23,7 +23,7 @@ This is an unofficial modification of the retained native game engine, not a sta
 
 ## Build and install
 
-See [Build instructions](docs/BUILD.md). Native patches target one exact prepared P3 baseline and refuse mismatched inputs. You need the compatible prepared baseline, Xcode, the insertion utility, and your own signing setup; UI assets and icons are included. The repository alone cannot produce a playable IPA. An unsigned IPA is available on the [0.0.32 release page](https://github.com/wireproof/Bejeweled/releases/tag/v0.0.32); it requires your own signing and provisioning.
+See [Build instructions](docs/BUILD.md). Native patches target one exact prepared P3 baseline and refuse mismatched inputs. You need the compatible prepared baseline, Xcode, the insertion utility, and your own signing setup; UI assets and icons are included. The repository alone cannot produce a playable IPA. An unsigned IPA is available on the [0.0.33 release page](https://github.com/wireproof/Bejeweled/releases/tag/v0.0.33); it requires your own signing and provisioning.
 
 Run the asset-independent checks:
 
@@ -37,7 +37,7 @@ clang++ -std=c++17 -Wall -Wextra -Werror -pedantic blitz-core/test_boost_core.cp
 
 November 15, 2026 audit: both Duo and the 11-inch iPad Pro report 0.0.32 (7867). Identical versions were not reinstalled and neither device was launched. Runtime and visual checks were not performed during this audit.
 
-Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.32 hides counters on saved-game prompts and fits the Zen Options label inside its button; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
+Version 0.0.20 was tested by the owner on Duo and described as the best version to date. Version 0.0.33 corrects iPad portrait side gutters by matching native and UIKit canvas dimensions at 320×480; Duo geometry stays unchanged. Version 0.0.32 fixed resume counters and the Zen label; see [release notes](docs/RELEASE_NOTES.md) for validation and remaining device checks. Test results establish source/packaging correctness, not complete gameplay parity or compatibility with every device.
 
 The public IPA has account and signing metadata removed and service configuration keys blanked. Its game binaries are unchanged, but this sanitized package has not been runtime-tested.
 

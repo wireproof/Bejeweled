@@ -1,3 +1,11 @@
+## 0.0.33 — 2026-11-15
+
+- Correct iPad portrait pillarboxing: use a 320×480 logical canvas instead of the tall 320×568 profile, updating the native dimensions and UIKit presentation together.
+- Preserve the existing Duo canvas, approved artwork, controls, identity and save format.
+- Add a hash-guarded update builder using the completed 0.0.32 package; preserve all game resources.
+
+Validation: bridge compilation, signature checks, guarded patches and portrait geometry checks passed. Physical launch, runtime and visual checks are not performed under the no-launch delivery rule.
+
 ## 0.0.32 — 2026-10-26
 
 - Hide Classic daily counters and interception during modal dialogs, including the saved-game Resume/New Game prompt. Preserve the independent 24-hour quotas.

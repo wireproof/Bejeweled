@@ -2,7 +2,7 @@
 
 ## Requirements and boundary
 
-Use macOS with Xcode command-line tools and an iPhoneOS SDK, Python 3, and an ARM64-compatible `insert_dylib` utility supplied separately. The maintained build uses Xcode/iPhoneOS SDK 27.1. Device reports in this project concern iOS/iPadOS 27.2; that is not a claim that the entire original game was recompiled with that SDK.
+Use macOS with Xcode command-line tools and an iPhoneOS SDK, Python 3, and an ARM64-compatible `insert_dylib` utility supplied separately. The 0.0.33 bridge build uses Xcode/iPhoneOS SDK 27.2. Device reports in this project concern iOS/iPadOS 27.2; that is not a claim that the entire original game was recompiled with that SDK.
 
 The bridge is compiled from source. The retained game executable is patched, and its SDK declaration is updated alongside the scene adapter. The original game is **not** rebuilt from source.
 
@@ -28,7 +28,17 @@ inputs/insert_dylib         # separately supplied executable
 
 Artwork and icons are included in the integration directories. Packaged runtime assets are in assets/runtime; assets/manifest.json records their hashes. The UI uses the named original-style PNGs and twenty orb animation frames; do not substitute files with different geometry without adjusting the layout code. The approved app icon is included.
 
-## Package
+## Update from the completed 0.0.32 release
+
+For 0.0.33, use the exact 0.0.32 unsigned release IPA (SHA-256 `4acad8fd1794b585caf370b4fb5bdbce9ddd9a96b55d289120a5f01d899724ad`) or the locally archived signed package supported by the builder. This route preserves the completed resources and rebuilds the bridge; it does not require the retired P3 archive.
+
+```sh
+python3 tools/package_display_update.py --base-ipa inputs/Bejeweled-0.0.32-unsigned.ipa --output dist/Bejeweled-0.0.33.ipa
+```
+
+It checks the exact baseline hash, native canvas bytes, version, archive integrity and unchanged members. Sign the result locally before installing. The public 0.0.32 input already has service keys blanked; the private device build uses the unchanged service configuration in its archived baseline.
+
+## Historical P3 packaging route
 
 ```sh
 mkdir -p dist
